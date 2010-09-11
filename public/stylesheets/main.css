@@ -2,12 +2,10 @@ body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
+  font-size:   12px;
   line-height: 18px;
   background-color: #A6C9E2;
 }
-
-H1 { color: #E17009; }
 
 pre {
   background-color: #eee;
@@ -52,11 +50,17 @@ pre {
   list-style: square;
 }
 
+/* general */
+.taglineSmall { color: #D46300; font-style: italic; }
+
 /** layout */
-.siteLogo { margin: auto; width: 400px; padding-right: 200px;}
-H1.sitename { font-size: 46px;}
-H2.tagline { font-size: 15px; margin-top: -30px; }
+.siteLogo { margin: auto; width: 400px; padding-right: 230px;}
+H1.sitename { font-size: 54px; color: #D46300; font-style: italic; }
+H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-left: 20px; }
 .copyright { font-size: 8px; margin: auto; width: 100px; padding-right: 450px; padding-top: 20px;}
+.taglineEmphasis { font-weight: bold; }
 
 /** Homepage */
 .homepage { margin: auto; width: 648px;}
+.homepageSection { padding-left: 8px; }
+.homepageSection .header { font-weight: bold; }
