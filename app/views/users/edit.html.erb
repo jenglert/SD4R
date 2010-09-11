@@ -1,0 +1,116 @@
+<h1>Editing user</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :current_address %><br />
+    <%= f.text_field :current_address %>
+  </p>
+  <p>
+    <%= f.label :current_zip_code %><br />
+    <%= f.text_field :current_zip_code %>
+  </p>
+  <p>
+    <%= f.label :current_state %><br />
+    <%= f.text_field :current_state %>
+  </p>
+  <p>
+    <%= f.label :current_city %><br />
+    <%= f.text_field :current_city %>
+  </p>
+  <p>
+    <%= f.label :desired_location_id %><br />
+    <%= f.text_field :desired_location_id %>
+  </p>
+  <p>
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </p>
+  <p>
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </p>
+  <p>
+    <%= f.label :race_id %><br />
+    <%= f.text_field :race_id %>
+  </p>
+  <p>
+    <%= f.label :religion_id %><br />
+    <%= f.text_field :religion_id %>
+  </p>
+  <p>
+    <%= f.label :desired_rent_min %><br />
+    <%= f.text_field :desired_rent_min %>
+  </p>
+  <p>
+    <%= f.label :desired_rent_max %><br />
+    <%= f.text_field :desired_rent_max %>
+  </p>
+  <p>
+    <%= f.label :available_days %><br />
+    <%= f.text_field :available_days %>
+  </p>
+  <p>
+    <%= f.label :available_hours %><br />
+    <%= f.text_field :available_hours %>
+  </p>
+  <p>
+    <%= f.label :approved_by %><br />
+    <%= f.text_field :approved_by %>
+  </p>
+  <p>
+    <%= f.label :approval_date %><br />
+    <%= f.datetime_select :approval_date %>
+  </p>
+  <p>
+    <%= f.label :desired_gender %><br />
+    <%= f.text_field :desired_gender %>
+  </p>
+  <p>
+    <%= f.label :desired_age_min %><br />
+    <%= f.text_field :desired_age_min %>
+  </p>
+  <p>
+    <%= f.label :desired_age_max %><br />
+    <%= f.text_field :desired_age_max %>
+  </p>
+  <p>
+    <%= f.label :has_a_room %><br />
+    <%= f.check_box :has_a_room %>
+  </p>
+  <p>
+    <%= f.label :desired_move_in_month %><br />
+    <%= f.text_field :desired_move_in_month %>
+  </p>
+  <p>
+    <%= f.label :desired_smoking_preference %><br />
+    <%= f.check_box :desired_smoking_preference %>
+  </p>
+  <p>
+    <%= f.label :desired_number_of_roommates %><br />
+    <%= f.text_field :desired_number_of_roommates %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

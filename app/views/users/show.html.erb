@@ -1,0 +1,133 @@
+<p>
+  <b>First name:</b>
+  <%=h @user.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @user.last_name %>
+</p>
+
+<p>
+  <b>Current address:</b>
+  <%=h @user.current_address %>
+</p>
+
+<p>
+  <b>Current zip code:</b>
+  <%=h @user.current_zip_code %>
+</p>
+
+<p>
+  <b>Current state:</b>
+  <%=h @user.current_state %>
+</p>
+
+<p>
+  <b>Current city:</b>
+  <%=h @user.current_city %>
+</p>
+
+<p>
+  <b>Desired location:</b>
+  <%=h @user.desired_location_id %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%=h @user.phone_number %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%=h @user.gender %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%=h @user.age %>
+</p>
+
+<p>
+  <b>Race:</b>
+  <%=h @user.race_id %>
+</p>
+
+<p>
+  <b>Religion:</b>
+  <%=h @user.religion_id %>
+</p>
+
+<p>
+  <b>Desired rent min:</b>
+  <%=h @user.desired_rent_min %>
+</p>
+
+<p>
+  <b>Desired rent max:</b>
+  <%=h @user.desired_rent_max %>
+</p>
+
+<p>
+  <b>Available days:</b>
+  <%=h @user.available_days %>
+</p>
+
+<p>
+  <b>Available hours:</b>
+  <%=h @user.available_hours %>
+</p>
+
+<p>
+  <b>Approved by:</b>
+  <%=h @user.approved_by %>
+</p>
+
+<p>
+  <b>Approval date:</b>
+  <%=h @user.approval_date %>
+</p>
+
+<p>
+  <b>Desired gender:</b>
+  <%=h @user.desired_gender %>
+</p>
+
+<p>
+  <b>Desired age min:</b>
+  <%=h @user.desired_age_min %>
+</p>
+
+<p>
+  <b>Desired age max:</b>
+  <%=h @user.desired_age_max %>
+</p>
+
+<p>
+  <b>Has a room:</b>
+  <%=h @user.has_a_room %>
+</p>
+
+<p>
+  <b>Desired move in month:</b>
+  <%=h @user.desired_move_in_month %>
+</p>
+
+<p>
+  <b>Desired smoking preference:</b>
+  <%=h @user.desired_smoking_preference %>
+</p>
+
+<p>
+  <b>Desired number of roommates:</b>
+  <%=h @user.desired_number_of_roommates %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

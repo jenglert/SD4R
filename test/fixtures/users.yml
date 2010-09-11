@@ -1,0 +1,57 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  current_address: MyString
+  current_zip_code: 1
+  current_state: MyString
+  current_city: MyString
+  desired_location_id: 1
+  phone_number: MyString
+  email: MyString
+  gender: 
+  age: 1
+  race_id: 1
+  religion_id: 1
+  desired_rent_min: 1
+  desired_rent_max: 1
+  available_days: MyString
+  available_hours: 1
+  approved_by: 1
+  approval_date: 2010-09-11 13:26:31
+  desired_gender: 
+  desired_age_min: 1
+  desired_age_max: 1
+  has_a_room: false
+  desired_move_in_month: 1
+  desired_smoking_preference: false
+  desired_number_of_roommates: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  current_address: MyString
+  current_zip_code: 1
+  current_state: MyString
+  current_city: MyString
+  desired_location_id: 1
+  phone_number: MyString
+  email: MyString
+  gender: 
+  age: 1
+  race_id: 1
+  religion_id: 1
+  desired_rent_min: 1
+  desired_rent_max: 1
+  available_days: MyString
+  available_hours: 1
+  approved_by: 1
+  approval_date: 2010-09-11 13:26:31
+  desired_gender: 
+  desired_age_min: 1
+  desired_age_max: 1
+  has_a_room: false
+  desired_move_in_month: 1
+  desired_smoking_preference: false
+  desired_number_of_roommates: 1
