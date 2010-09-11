@@ -4,13 +4,26 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
+    <%= f.label :first_name %> 
+    <%= f.text_field :first_name %> 
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </p>
+
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </p>
+
+  <p>
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+	<%= f.label :age %>
+    <%= f.text_field :age %>
+  </p>
+
   <p>
     <%= f.label :current_address %><br />
     <%= f.text_field :current_address %>
@@ -32,20 +45,12 @@
     <%= f.text_field :desired_location_id %>
   </p>
   <p>
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %>
+
   </p>
+
+
   <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
-  </p>
-  <p>
-    <%= f.label :age %><br />
-    <%= f.text_field :age %>
+
   </p>
   <p>
     <%= f.label :race_id %><br />
