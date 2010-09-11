@@ -53,5 +53,10 @@ pre {
 }
 
 /** layout */
-H1.sitename { position: relative; }
-H2.tagline { position: absolute; }
+.siteLogo { margin: auto; width: 400px; padding-right: 200px;}
+H1.sitename { font-size: 46px;}
+H2.tagline { font-size: 15px; margin-top: -30px; }
+.copyright { font-size: 8px; margin: auto; width: 100px; padding-right: 450px; padding-top: 20px;}
+
+/** Homepage */
+.homepage { margin: auto; width: 648px;}
