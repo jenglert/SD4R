@@ -83,32 +83,28 @@
   </p>
 
   <p>
-    <%= f.label :available_days %><span class="colon">:</span>
-  	<p>
-	   <%= f.label :monday %>
-  	   <%= f.check_box :publish, :checked => 'checked' %>  
+    Days Available<span class="colon">:</span>
+		<input type="checkbox" name="available_mon" />	   
+  		<label class="day_available" for="available_mon">Mon</label>
 
-           <%= f.label :tuesday %>
-           <%= f.check_box :publish, :checked => 'checked' %>
-        </p>
-        <p>
-           <%= f.label :wednesday %>
-           <%= f.check_box :publish, :checked => 'checked' %>
+		<input type="checkbox" name="available_tue" />	   
+  		<label class="day_available" for="available_tue">Tue</label>
 
-           <%= f.label :thursday %>
-           <%= f.check_box :publish, :checked => 'checked' %>
-        </p>
-        <p>
-           <%= f.label :friday %>
-           <%= f.check_box :publish, :checked => 'checked' %>
+		<input type="checkbox" name="available_wed" />	   
+  		<label class="day_available" for="available_wed">Wed</label>
 
-           <%= f.label :saturday %>
-           <%= f.check_box :publish, :checked => 'checked' %>
-        </p>
-        <p>
-           <%= f.label :sunday %>
-           <%= f.check_box :publish, :checked => 'checked' %>
-        </p>
+		<input type="checkbox" name="available_thur" />	   
+  		<label class="day_available" for="available_thur">Thur</label>
+
+		<input type="checkbox" name="available_fri" />	   
+  		<label class="day_available" for="available_fri">Fri</label>
+
+		<input type="checkbox" name="available_sat" />	   
+  		<label class="day_available" for="available_sat">Sat</label>
+
+		<input type="checkbox" name="available_sun" />	   
+  		<label class="day_available" for="available_sun">Sun</label>
+		
   </p>
   <p>
     <%= f.label :available_hours %><br />

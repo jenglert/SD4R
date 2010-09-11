@@ -88,8 +88,10 @@ H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-lef
 
 .registration .rent_min { width: 50px; }
 .registration .rent_max { width: 50px; }
+
 .registration .desired_gender { width: 40px; }
 .registration .desired_age_max { width: 25px; }
 .registration .desired_age_min { width: 25px; }
 .registration .desired_number_of_roomates { width: 25px; }
 
+.registration .day_available_label { margin-left: -3px; }
