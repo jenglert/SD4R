@@ -69,3 +69,26 @@ H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-lef
 
 /** White background layout */
 .whiteBackgroundLayout { -moz-border-radius: 15px; border-radius: 15px; background-color: white; padding: 15px; width: 600px; margin: auto; }
+
+/** Registration */
+.registration .colon { color: #D46300;}
+.registration .header { font-size: 16px; }
+.registration .header .important { font-size: 17px; font-weight: bold; color: #D46300; }
+.registration .first_name { width: 100px; margin-right: 15px; }
+.registration .last_name { width: 100px; }
+.registration .email {width: 200px; margin-right: 45px;}
+.registration .phone_number { width: 70px; }
+.registration .age { width: 22px; }
+
+.registration .current_city { width: 200px; }
+.registration .current_state { width: 25px; }
+.registration .current_zip_code { width: 50px; }
+.registration .race { width: 100px; }
+.registration .religion { width: 100px; }
+
+.registration .rent_min { width: 50px; }
+.registration .rent_max { width: 50px; }
+.registration .religion { width: 100px; }
+.registration .religion { width: 100px; }
+
+
