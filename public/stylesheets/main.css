@@ -63,4 +63,6 @@ H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-lef
 /** Homepage */
 .homepage { margin: auto; width: 648px;}
 .homepageSection { padding-left: 8px; }
-.homepageSection .header { font-weight: bold; }
+.homepageSection .header { font-weight: bold; font-size: 13px; background-image:url('/images/arrow.png'); 
+			background-repeat: no-repeat; background-position: left center; padding-left: 20px;}
+.homepageSection .answer { padding-left: 18px; padding-top: 6px; }
