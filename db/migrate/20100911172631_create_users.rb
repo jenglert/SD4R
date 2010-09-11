@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :desired_location_id
       t.string :phone_number
       t.string :email
-      t.char :gender
+      t.string :gender
       t.integer :age
       t.integer :race_id
       t.integer :religion_id
@@ -20,7 +20,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :available_hours
       t.integer :approved_by
       t.timestamp :approval_date
-      t.char :desired_gender
+      t.string :desired_gender
       t.integer :desired_age_min
       t.integer :desired_age_max
       t.boolean :has_a_room
