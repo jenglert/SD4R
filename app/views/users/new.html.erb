@@ -50,37 +50,6 @@
     <%= f.label :religion_id %><span class="colon">:</span>
     <%= f.text_field :religion_id, :class=> "religion"  %>
   </p>
-  <p>
-  <div class="header">
-	<span class="important">What you want:</span> Tell us about your perfect roommate situation
-  </div>
-  </p>
-    <%= f.label :minimum_monthly_rent %><span class="colon">:</span>
-    <%= f.text_field :desired_rent_min, :class=> "rent_min" %>
-    <%= f.label :maximum_monthly_rent %><span class="colon">:</span>
-    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
-  </p>
-
-  <p>
-    <%= f.label :number_of_roommates %><span class="colon">:</span>
-    <%= f.text_field :desired_number_of_roommates, :class=> "desired_number_of_roomates"  %>
-  </p>
-
-  <p>
-    <%= f.label :gender %><span class="colon">:</span>
-    <%= f.text_field :desired_gender, :class=> "desired_gender"  %>
- 
-    <%= f.label :maximum_age %><span class="colon">:</span>
-    <%= f.text_field :desired_age_min, :class=> "desired_age_min" %>
-
-    <%= f.label :minimum_age %><span class="colon">:</span>
-    <%= f.text_field :desired_age_max, :class=> "desired_age_max" %>
-  </p>
-
-  <p>
-    <%= f.label :prefer_a_smoking_roomate? %><span class="colon">:</span>
-    <%= f.check_box :desired_smoking_preference, :class=> "rent_max"  %>
-  </p>
 
   <p>
     Days Available<span class="colon">:</span>
@@ -107,9 +76,48 @@
 		
   </p>
   <p>
-    <%= f.label :available_hours %><br />
+    <%= f.label :available_hours %>
     <%= f.text_field :available_hours %>
+
   </p>
+
+  <p>
+	  <div class="header">
+		<span class="important">What you want:</span> Tell us about your perfect roommate situation
+	  </div>
+  </p>
+    <%= f.label :minimum_monthly_rent %><span class="colon">:</span>
+    <%= f.text_field :desired_rent_min, :class=> "rent_min" %>
+    <%= f.label :maximum_monthly_rent %><span class="colon">:</span>
+    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
+  </p>
+
+  <p>
+    <%= f.label :number_of_roommates %><span class="colon">:</span>
+    <%= f.text_field :desired_number_of_roommates, :class=> "desired_number_of_roomates"  %>
+  </p>
+
+  <p>
+    <%= f.label :gender %><span class="colon">:</span>
+    <%= f.text_field :desired_gender, :class=> "desired_gender"  %>
+ 
+    <%= f.label :maximum_age %><span class="colon">:</span>
+    <%= f.text_field :desired_age_min, :class=> "desired_age_min" %>
+
+    <%= f.label :minimum_age %><span class="colon">:</span>
+    <%= f.text_field :desired_age_max, :class=> "desired_age_max" %>
+  </p>
+
+  <p>
+    <%= f.label :prefer_a_smoking_roomate? %><span class="colon">:</span>
+	<input type="checkbox" name="desired_smoking_preference" />	   
+	<label class="day_available" for="desired_smoking_preference">Yes</label>
+	<input type="checkbox" name="desired_smoking_preference_no" />	   
+	<label class="day_available" for="desired_smoking_preference_no">No</label>
+  </p>
+
+
+
   <p>
     <%= f.label :approved_by %><br />
     <%= f.text_field :approved_by %>
@@ -125,10 +133,7 @@
     <%= f.label :has_a_room %><br />
     <%= f.check_box :has_a_room %>
   </p>
-  <p>
-    <%= f.label :desired_move_in_month %><br />
-    <%= f.text_field :desired_move_in_month %>
-  </p>
+
 
 
   <p>
