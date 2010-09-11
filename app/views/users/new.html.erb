@@ -65,7 +65,10 @@
   </p>
   <p>
     <%= f.label :available_days %><br />
-    <%= f.text_field :available_days %>
+  	<p>
+	   <%= f.label :monday %>
+  	   <%= f.check_box :publish, :checked => 'checked' %>  
+  	</p>
   </p>
   <p>
     <%= f.label :available_hours %><br />
