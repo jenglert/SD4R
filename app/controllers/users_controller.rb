@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new(:first_name => 'First Name', :last_name => 'Last Name', :email => "Email Address")
+    @user = User.new(:first_name => 'First Name', :last_name => 'Last Name', :email => "Email Address", :city_id => params[:city_id])
   end
 
   def create

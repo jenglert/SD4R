@@ -18,7 +18,7 @@
 	</p>
 
 	<p>
-		<%= f.label :gender %><span class="colon">:</span>
+		<%= f.label :gender %><span class="orangish">:</span>
 		<% [ 'male', 'female' ].each do |gender| %>
 			<%= f.radio_button :gender, gender	  %>
 			<%= f.label "gender#{gender}", gender.humanize %>
@@ -26,7 +26,7 @@
 	</p>
 	
 	<p>
-		<%= f.label :Date_of_Birth %><span class="colon">:</span>
+		<%= f.label :Date_of_Birth %><span class="orangish">:</span>
 		<%= f.date_select :birth_date, :start_year => Time.now.year - 16, :end_year => Time.now.year - 70, :include_blank => true  %>
 	</p>
 	<BR>
@@ -35,25 +35,25 @@
 			<span class="important">What you need</span>
 		  </div>
 	  <p>
-	    <%= f.label :maximum_monthly_rent %><span class="colon">:</span>
+	    <%= f.label :maximum_monthly_rent %><span class="orangish">:</span>
 	    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
 	  </p>
 
 	  <p>
-	    <%= f.label :maximum_number_of_roommates %><span class="colon">:</span>
+	    <%= f.label :maximum_number_of_roommates %><span class="orangish">:</span>
 		<%= f.text_field :desired_number_of_roommates, :class=> "desired_number_of_roommates" %>
 	  </p>
 
 		<p>
-		  <%= f.label :maximum_age %><span class="colon">:</span>
+		  <%= f.label :maximum_age %><span class="orangish">:</span>
 		  <%= f.text_field :desired_age_min, :class=> "desired_age_min" %>
 			&nbsp;
-		  <%= f.label :minimum_age %><span class="colon">:</span>
+		  <%= f.label :minimum_age %><span class="orangish">:</span>
 		  <%= f.text_field :desired_age_max, :class=> "desired_age_max" %>
 		</p>
 
 		<p>	
-		<%= f.label :gender %><span class="colon">:</span>
+		<%= f.label :gender %><span class="orangish">:</span>
 		  <% [ 'male', 'female' ].each do |gender| %>
 		    <%= f.radio_button:desired_gender, gender	  %>
 		    <%= f.label "gender#{gender}", gender.humanize %>
@@ -61,7 +61,7 @@
 		</p>
 	
 	<p>
-	<%= f.label :Smoking %><span class="colon">:</span>
+	<%= f.label :Smoking %><span class="orangish">:</span>
 	  <% [ 'Yes', 'No' ].each do |smoking| %>
 	    <%= f.radio_button :desired_smoking_preference, smoking %>
 	    <%= f.label "smoking#{smoking}", smoking.humanize %>

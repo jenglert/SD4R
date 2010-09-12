@@ -7,5 +7,5 @@ $(document).ready(function() {
 
 function selectACity() {
 	var city = $('#city').val();
-	window.location.href='/users/new?city=' + city
+	window.location.href='/users/new?city_id=' + city
 }
