@@ -5,7 +5,7 @@
   <%= f.error_messages %>
 
   <div class="header">
-	<span class="important">Basics:</span> Help us find you a roommate.
+	<span class="important">Who you are</span>
   </div>
 
 	<p>
@@ -26,15 +26,15 @@
 	</p>
 	
 	<p>
-		<%= f.label :age %><span class="colon">:</span>
+		<%= f.label :Date_of_Birth %><span class="colon">:</span>
 		<%= f.date_select :age, :start_year => Time.now.year - 70, :end_year => Time.now.year - 16  %>
 	</p>
-
-	  <p>
+	<BR>
+		
 		  <div class="header">
-			<span class="important">What you want:</span> Tell us about your perfect roommate situation
+			<span class="important">What you need</span>
 		  </div>
-	  </p>
+	  <p>
 	    <%= f.label :maximum_monthly_rent %><span class="colon">:</span>
 	    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
 	  </p>
@@ -69,11 +69,6 @@
 	    <%= f.label "smoking#{smoking}", smoking.humanize %>
 	<% end %>
 	</p>
-  <p>
-    <%= f.label :has_a_room_needs_a_roomate %>
-    <%= f.check_box :has_a_room %>
-  </p>
-
 
 
   <p>
