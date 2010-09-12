@@ -40,7 +40,8 @@
 	<%= f.label :current_city %><span class="colon">:</span>
     <%= f.text_field :current_city, :class=> "current_city" %>
     <%= f.label :current_state %><span class="colon">:</span>
-    <%= f.text_field :current_state, :class=> "current_state" %>
+	<%= f.text_field :current_state, :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;" %>
+
     <%= f.label :current_zip_code %><span class="colon">:</span>
     <%= f.text_field :current_zip_code, :class=> "current_zip_code" %>
   </p>
@@ -50,6 +51,9 @@
     <%= f.label :religion_id %><span class="colon">:</span>
     <%= f.text_field :religion_id, :class=> "religion"  %>
   </p>
+
+
+
 
   <p>
     Days Available<span class="colon">:</span>

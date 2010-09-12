@@ -2,9 +2,9 @@ body { background-color: #fff; color: #333; }
 
 body {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   12px;
+  font-size:   14px;
   line-height: 18px;
-  background-color: #A6C9E2;
+  background-color: #158384;
 }
 
 pre {
@@ -51,20 +51,22 @@ pre {
 }
 
 /* general */
-.taglineSmall { color: #D46300; font-style: italic; }
+.taglineSmall { color: #F11C23; }
 
 /** layout */
-.siteLogo { margin: auto; width: 400px; padding-right: 230px;}
-H1.sitename { font-size: 54px; color: #D46300; font-style: italic; }
+.siteLogo { margin: auto; color: white; width: 400px; padding-right: 230px;}
+H1.sitename { font-size: 54px; color: #F3648A; font-style: italic; }
 H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-left: 20px; }
-.copyright { font-size: 8px; margin: auto; width: 100px; padding-right: 450px; padding-top: 20px;}
+
+.copyright { font-size: 8px; margin: auto; width: 200px; padding-left: 450px; padding-top: 20px;}
 .taglineEmphasis { font-weight: bold; }
 
 /** Homepage */
-.homepage { margin: auto; width: 648px;}
+.homepage { margin: auto; padding-left: 20px; width: 648px;}
+.homepage_flavor_text { margin: auto; color: black; padding-right: 8px; }
 .homepageSection { padding-left: 8px; }
 .homepageSection .header { font-weight: bold; font-size: 13px; background-image:url('/images/arrow.png'); 
-			background-repeat: no-repeat; background-position: left center; padding-left: 20px;}
+			background-repeat: no-repeat; background-position: left ; padding-left: 20px;}
 .homepageSection .answer { padding-left: 18px; padding-top: 6px; }
 
 /** White background layout */
@@ -88,11 +90,8 @@ H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-lef
 
 .registration .rent_min { width: 50px; }
 .registration .rent_max { width: 50px; }
-<<<<<<< Updated upstream
 
-=======
 .registration .desired_number_of_roomates { width: 25px; }
->>>>>>> Stashed changes
 .registration .desired_gender { width: 40px; }
 .registration .desired_age_max { width: 25px; }
 .registration .desired_age_min { width: 25px; }
