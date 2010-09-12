@@ -41,15 +41,17 @@
 
 	  <p>
 	    <%= f.label :maximum_number_of_roommates %><span class="orangish">:</span>
-		<%= f.text_field :desired_number_of_roommates, :class=> "desired_number_of_roommates" %>
+		<%= f.select :desired_number_of_roommates, options_from_collection_for_select(1..4, 'to_s', 'to_s'),  :class=> "desired_number_of_roomates" %>
+	
 	  </p>
 
 		<p>
 		  <%= f.label :maximum_age %><span class="orangish">:</span>
-		  <%= f.text_field :desired_age_min, :class=> "desired_age_min" %>
+		  <%= f.select :desired_age_min, options_from_collection_for_select(16..70, 'to_s', 'to_s'),  :class=> "desired_age_min" %>
 			&nbsp;
 		  <%= f.label :minimum_age %><span class="orangish">:</span>
-		  <%= f.text_field :desired_age_max, :class=> "desired_age_max" %>
+		  <%= f.select :desired_age_max, options_from_collection_for_select(16..70, 'to_s', 'to_s'),  :class=> "desired_age_max" %>
+
 		</p>
 
 		<p>	
