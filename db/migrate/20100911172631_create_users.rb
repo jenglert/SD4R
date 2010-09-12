@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :gender
       t.integer :age
+      t.timestamp :birth_date
       t.integer :race_id
       t.integer :religion_id
       t.integer :desired_rent_min
