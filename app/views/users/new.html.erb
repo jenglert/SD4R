@@ -50,7 +50,7 @@
 		  <%= f.select :desired_age_min, options_from_collection_for_select(16..70, 'to_s', 'to_s'),  :class=> "desired_age_min" %>
 			&nbsp;
 		  <%= f.label :minimum_age %><span class="orangish">:</span>
-		  <%= f.select :desired_age_max, options_from_collection_for_select(70..16, 'to_s', 'to_s'),  :class=> "desired_age_max" %>
+		  <%= f.select :desired_age_max, options_from_collection_for_select((16..70).to_a.reverse, 'to_s', 'to_s'),  :class=> "desired_age_max" %>
 
 		</p>
 
