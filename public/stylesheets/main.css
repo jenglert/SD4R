@@ -34,7 +34,7 @@ pre {
   padding: 5px 5px 5px 15px;
   font-size: 12px;
   margin: -7px;
-  background-color: #c00;
+  background-color: #FB6C59;
   color: #fff;
 }
 
@@ -75,8 +75,7 @@ H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-lef
 .registration .colon { color: #D46300;}
 .registration .header { font-size: 16px; }
 .registration .header .important { font-size: 17px; font-weight: bold; color: #D46300; }
-.registration .first_name { margin-right: 15px; }
-.registration .first_name INPUT { width: 100px; }
+.registration .first_name { margin-right: 15px; width: 100px; }
 .registration .last_name { width: 100px; }
 .registration .email {width: 200px; margin-right: 45px;}
 .registration .phone_number { width: 70px; }

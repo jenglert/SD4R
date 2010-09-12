@@ -1,6 +1,6 @@
 
 
-<div id="tabs" class="homepage">
+<div class="homepage">
 	<BR>
 	<div class="homepage_flavor_text">
 If you brought the concept of speed dating to roommate finding, you could call it Speed Roommating. But we didn’t. We called it Vroommates. And it’s the fastest, easiest, and potentially most fun way to find people you’d want to live with.
@@ -16,6 +16,7 @@ After quickly creating an online profile describing your living habits and prefe
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 	
 				<%= select_tag "city", "
+						<option value=''>Choose A City</option>
 						<option value='9'>New York City, NY</option>
 					    <option value='1'>Atlanta, GA</a></option>
 						<option value='2'>Boston, MA</option>
@@ -30,7 +31,7 @@ After quickly creating an online profile describing your living habits and prefe
 						<option value='12'>Phoenix, AZ</option>		
 						<option value='13'>San Francisco, CA</option>							
 						<option value='14'>Seattle, WA</option>
-						<option value='15'>Washington D.C.</option>	", :onChange => "window.location.href='/users/new'"  %>
+						<option value='15'>Washington D.C.</option>	", :onChange => "selectACity()"  %>
 					
 			
 				
@@ -39,9 +40,3 @@ After quickly creating an online profile describing your living habits and prefe
 			</h3>	
 		</p>
 </div>
-
-<script type="text/javascript">
-	$(function() {
-		$("#tabs").tabs({event: 'mouseover'});
-	});
-	</script>

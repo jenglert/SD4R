@@ -2,17 +2,19 @@
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
 
+  <%= f.hidden_field :city_id %>
+
   <div class="header">
 	<span class="important">Who you are</span>
   </div>
 
 	<p>
-		<%= f.text_field :first_name, :class => 'first_name', :value => 'First Name', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
-		<%= f.text_field :last_name, :class=> "last_name", :value => 'Last Name', :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
+		<%= f.text_field :first_name, :class => 'first_name', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
+		<%= f.text_field :last_name, :class=> "last_name", :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
 	</p>
 
 	<p>
-		<%= f.text_field :email, :class=> "email", :value => 'Email Address', :onFocus => "if(this.value=='Email Address') this.value='';", :onBlur => "if(this.value=='') this.value='Email Address';"%> 
+		<%= f.text_field :email, :class=> "email", :onFocus => "if(this.value=='Email Address') this.value='';", :onBlur => "if(this.value=='') this.value='Email Address';"%> 
 	</p>
 
 	<p>

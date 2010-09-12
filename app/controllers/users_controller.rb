@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @user = User.new(:first_name => 'First Name', :last_name => 'Last Name', :email => "Email Address")
   end
 
   def create
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     
     @user.first_name = nil if @user.first_name == 'First Name'
     @user.last_name = nil if @user.last_name == 'Last Name'
-    @user.email = nil if @user.email = 'Email Address'
+    @user.email = nil if @user.email == 'Email Address'
     
     if @user.save
       render :action => 'registration_thanks'
