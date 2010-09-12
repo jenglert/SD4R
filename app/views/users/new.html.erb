@@ -7,22 +7,24 @@
   <div class="header">
 	<span class="important">Basics:</span> Help us find you a roommate.
   </div>
-  <p>
-	<%= f.text_field :first_name, :class=> "first_name", :value => 'First Name', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
-	<%= f.text_field :last_name, :class=> "last_name", :value => 'Last Name', :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
-  </p>
 
-  <p>
-	<%= f.text_field :email, :class=> "email", :value => 'Email Address', :onFocus => "if(this.value=='Email Address') this.value='';", :onBlur => "if(this.value=='') this.value='Email Address';"%> 
-  </p>
-
-  <p>
-	<%= f.label :gender %><span class="colon">:</span>
-	  <% [ 'male', 'female' ].each do |gender| %>
-	    <%= f.radio_button:gender, gender	  %>
-	    <%= f.label "gender#{gender}", gender.humanize %>
-	  <% end %>
+	<p>
+		<%= f.text_field :first_name, :class=> "first_name", :value => 'First Name', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
+		<%= f.text_field :last_name, :class=> "last_name", :value => 'Last Name', :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
 	</p>
+
+	<p>
+		<%= f.text_field :email, :class=> "email", :value => 'Email Address', :onFocus => "if(this.value=='Email Address') this.value='';", :onBlur => "if(this.value=='') this.value='Email Address';"%> 
+	</p>
+
+	<p>
+		<%= f.label :gender %><span class="colon">:</span>
+		<% [ 'male', 'female' ].each do |gender| %>
+			<%= f.radio_button:gender, gender	  %>
+			<%= f.label "gender#{gender}", gender.humanize %>
+		<% end %>
+	</p>
+	
 	<p>
 		<%= f.label :age %><span class="colon">:</span>
 		<%= f.date_select :age, :start_year => Time.now.year - 70, :end_year => Time.now.year - 16  %>
