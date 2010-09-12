@@ -8,63 +8,65 @@
 	<span class="important">Basics:</span> Help us find you a roommate.
   </div>
   <p>
-    <%#= f.label :first_name %>
-    <%#= f.text_field :first_name, :class=> "first_name" %>
-	<%= text_field_tag(:s, "First Name",  :class=> "first_name",  :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;") %> 
-    <%#= f.label :last_name %>
-    <%#= f.text_field :last_name, :class=> "last_name"%>
-	<%= text_field_tag(:s, "Last Name",  :class=> "last_name",  :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;") %> 
+	<%= f.text_field :first_name, :class=> "first_name", :value => 'First Name', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
+	<%= f.text_field :last_name, :class=> "last_name", :value => 'Last Name', :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
   </p>
 
   <p>
-    <%#= f.label :email %>
-    <%#= f.text_field :email, :class=> "email" %>
-	<%= text_field_tag(:s, "Email Address",  :class=> "email_address",  :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;") %> 
+	<%= f.text_field :email, :class=> "email", :value => 'Email Address', :onFocus => "if(this.value=='Email Address') this.value='';", :onBlur => "if(this.value=='') this.value='Email Address';"%> 
   </p>
 
   <p>
-    <%= f.label :gender %><span class="colon">:</span>
-    <%= f.text_field :gender, :class=> "gender" %>
-	<%= f.label :age %><span class="colon">:</span>
-    <%= f.text_field :age, :class=> "age" %>
-  </p>
+	<%= f.label :gender %><span class="colon">:</span>
+	  <% [ 'male', 'female' ].each do |gender| %>
+	    <%= f.radio_button:gender, gender	  %>
+	    <%= f.label "gender#{gender}", gender.humanize %>
+	  <% end %>
+	</p>
+	<p>
+		<%= f.label :age %><span class="colon">:</span>
+		<%= f.date_select :age, :start_year => Time.now.year - 70, :end_year => Time.now.year - 16  %>
+	</p>
+
+	  <p>
+		  <div class="header">
+			<span class="important">What you want:</span> Tell us about your perfect roommate situation
+		  </div>
+	  </p>
+	    <%= f.label :maximum_monthly_rent %><span class="colon">:</span>
+	    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
+	  </p>
+
+	  <p>
+	    <%= f.label :maximum_number_of_roommates %><span class="colon">:</span>
+		<%= f.text_field :desired_number_of_roommates, :class=> "desired_number_of_roommates" %>
+	  </p>
+
+		<p>
+		  <%= f.label :maximum_age %><span class="colon">:</span>
+		  <%= f.text_field :desired_age_min, :class=> "desired_age_min" %>
+			&nbsp;
+		  <%= f.label :minimum_age %><span class="colon">:</span>
+		  <%= f.text_field :desired_age_max, :class=> "desired_age_max" %>
+		</p>
 
 
-  <p>
-	  <div class="header">
-		<span class="important">What you want:</span> Tell us about your perfect roommate situation
-	  </div>
-  </p>
-    <%= f.label :maximum_monthly_rent %><span class="colon">:</span>
-    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
-  </p>
 
-  <p>
-    <%= f.label :maximum_number_of_roommates %><span class="colon">:</span>
-	<%= f.text_field :desired_number_of_roommates, :class=> "desired_number_of_roommates" %>
-  </p>
-
-  <p>
-    <%= f.label :maximum_age %><span class="colon">:</span>
-    <%= f.text_field :desired_age_min, :class=> "desired_age_min" %>
-	&nbsp;
-    <%= f.label :minimum_age %><span class="colon">:</span>
-    <%= f.text_field :desired_age_max, :class=> "desired_age_max" %>
-  </p>
-
-  <p>
-    <%= f.label :gender %><span class="colon">:</span>
-    <%= f.text_field :desired_gender, :class=> "desired_gender"  %>
-  </p>
-
-  <p>
-    <%= f.label :prefer_a_smoking_roomate? %><span class="colon">:</span>
-	<input type="checkbox" name="desired_smoking_preference" />	   
-	<label class="day_available" for="desired_smoking_preference">Yes</label>
-	<input type="checkbox" name="desired_smoking_preference_no" />	   
-	<label class="day_available" for="desired_smoking_preference_no">No</label>
-  </p>
-
+		<p>	
+		<%= f.label :gender %><span class="colon">:</span>
+		  <% [ 'male', 'female' ].each do |gender| %>
+		    <%= f.radio_button:desired_gender, gender	  %>
+		    <%= f.label "gender#{gender}", gender.humanize %>
+		<% end %>
+		</p>
+	
+	<p>
+	<%= f.label :Smoking %><span class="colon">:</span>
+	  <% [ 'Yes', 'No' ].each do |smoking| %>
+	    <%= f.radio_button :desired_smoking_preference, smoking %>
+	    <%= f.label "smoking#{smoking}", smoking.humanize %>
+	<% end %>
+	</p>
   <p>
     <%= f.label :has_a_room_needs_a_roomate %>
     <%= f.check_box :has_a_room %>
