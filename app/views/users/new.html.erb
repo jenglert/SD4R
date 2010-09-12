@@ -27,7 +27,7 @@
 	
 	<p>
 		<%= f.label :Date_of_Birth %><span class="orangish">:</span>
-		<%= f.date_select :birth_date, :start_year => Time.now.year - 16, :end_year => Time.now.year - 70, :include_blank => true  %>
+		<%= f.date_select :birth_date, :start_year => Time.now.year - 16, :end_year => Time.now.year - 70, :include_blank => true, :order => [:month, :day, :year]  %>
 	</p>
 	<BR>
 		
