@@ -51,11 +51,11 @@ pre {
 }
 
 /* general */
-.taglineSmall { color: #F11C23; }
+.taglineSmall { color: #D46300; }
 
 /** layout */
 .siteLogo { margin: auto; color: white; width: 400px; padding-right: 230px;}
-H1.sitename { font-size: 54px; color: #F3648A; font-style: italic; }
+H1.sitename { font-size: 54px; color: #D46300; font-style: italic; }
 H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-left: 20px; }
 
 .copyright { font-size: 8px; margin: auto; width: 200px; padding-left: 450px; padding-top: 20px;}
@@ -81,6 +81,7 @@ H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-lef
 .registration .email {width: 200px; margin-right: 45px;}
 .registration .phone_number { width: 70px; }
 .registration .age { width: 22px; }
+.registration .gender { width: 44px; }
 
 .registration .current_city { width: 200px; }
 .registration .current_state { width: 25px; }
@@ -91,10 +92,9 @@ H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-lef
 .registration .rent_min { width: 50px; }
 .registration .rent_max { width: 50px; }
 
-.registration .desired_number_of_roomates { width: 25px; }
+.registration .desired_number_of_roommates { width: 25px; }
 .registration .desired_gender { width: 40px; }
 .registration .desired_age_max { width: 25px; }
 .registration .desired_age_min { width: 25px; }
-
 
 .registration .day_available_label { margin-left: -3px; }

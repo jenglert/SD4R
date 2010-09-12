@@ -8,17 +8,18 @@
 	<span class="important">Basics:</span> Help us find you a roommate.
   </div>
   <p>
-    <%= f.label :first_name %><span class="colon">:</span>
-    <%= f.text_field :first_name, :class=> "first_name" %> 
-    <%= f.label :last_name %><span class="colon">:</span>
-    <%= f.text_field :last_name, :class=> "last_name"%>
+    <%#= f.label :first_name %>
+    <%#= f.text_field :first_name, :class=> "first_name" %>
+	<%= text_field_tag(:s, "First Name",  :class=> "first_name",  :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;") %> 
+    <%#= f.label :last_name %>
+    <%#= f.text_field :last_name, :class=> "last_name"%>
+	<%= text_field_tag(:s, "Last Name",  :class=> "last_name",  :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;") %> 
   </p>
 
   <p>
-    <%= f.label :email %><span class="colon">:</span>
-    <%= f.text_field :email, :class=> "email" %>
-    <%= f.label :phone_number %><span class="colon">:</span>
-    <%= f.text_field :phone_number, :class=> "phone_number" %>
+    <%#= f.label :email %>
+    <%#= f.text_field :email, :class=> "email" %>
+	<%= text_field_tag(:s, "Email Address",  :class=> "email_address",  :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;") %> 
   </p>
 
   <p>
@@ -28,88 +29,32 @@
     <%= f.text_field :age, :class=> "age" %>
   </p>
 
-  <div class="header">
-	<span class="important">About You:</span>
-  </div>
-
-  <p>
-    <%= f.label :current_address %><span class="colon">:</span>
-    <%= f.text_field :current_address, :class=> "current_address" %>
-  </p>
-  <p>
-	<%= f.label :current_city %><span class="colon">:</span>
-    <%= f.text_field :current_city, :class=> "current_city" %>
-    <%= f.label :current_state %><span class="colon">:</span>
-	<%= f.text_field :current_state, :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;" %>
-
-    <%= f.label :current_zip_code %><span class="colon">:</span>
-    <%= f.text_field :current_zip_code, :class=> "current_zip_code" %>
-  </p>
-  <p>
-	<%= f.label :race_id %><span class="colon">:</span>
-    <%= f.text_field :race_id, :class=> "race"  %>
-    <%= f.label :religion_id %><span class="colon">:</span>
-    <%= f.text_field :religion_id, :class=> "religion"  %>
-  </p>
-
-
-
-
-  <p>
-    Days Available<span class="colon">:</span>
-		<input type="checkbox" name="available_mon" />	   
-  		<label class="day_available" for="available_mon">Mon</label>
-
-		<input type="checkbox" name="available_tue" />	   
-  		<label class="day_available" for="available_tue">Tue</label>
-
-		<input type="checkbox" name="available_wed" />	   
-  		<label class="day_available" for="available_wed">Wed</label>
-
-		<input type="checkbox" name="available_thur" />	   
-  		<label class="day_available" for="available_thur">Thur</label>
-
-		<input type="checkbox" name="available_fri" />	   
-  		<label class="day_available" for="available_fri">Fri</label>
-
-		<input type="checkbox" name="available_sat" />	   
-  		<label class="day_available" for="available_sat">Sat</label>
-
-		<input type="checkbox" name="available_sun" />	   
-  		<label class="day_available" for="available_sun">Sun</label>
-		
-  </p>
-  <p>
-    <%= f.label :available_hours %>
-    <%= f.text_field :available_hours %>
-
-  </p>
 
   <p>
 	  <div class="header">
 		<span class="important">What you want:</span> Tell us about your perfect roommate situation
 	  </div>
   </p>
-    <%= f.label :minimum_monthly_rent %><span class="colon">:</span>
-    <%= f.text_field :desired_rent_min, :class=> "rent_min" %>
     <%= f.label :maximum_monthly_rent %><span class="colon">:</span>
     <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
   </p>
 
   <p>
-    <%= f.label :number_of_roommates %><span class="colon">:</span>
-    <%= f.text_field :desired_number_of_roommates, :class=> "desired_number_of_roomates"  %>
+    <%= f.label :maximum_number_of_roommates %><span class="colon">:</span>
+	<%= f.text_field :desired_number_of_roommates, :class=> "desired_number_of_roommates" %>
+  </p>
+
+  <p>
+    <%= f.label :maximum_age %><span class="colon">:</span>
+    <%= f.text_field :desired_age_min, :class=> "desired_age_min" %>
+	&nbsp;
+    <%= f.label :minimum_age %><span class="colon">:</span>
+    <%= f.text_field :desired_age_max, :class=> "desired_age_max" %>
   </p>
 
   <p>
     <%= f.label :gender %><span class="colon">:</span>
     <%= f.text_field :desired_gender, :class=> "desired_gender"  %>
- 
-    <%= f.label :maximum_age %><span class="colon">:</span>
-    <%= f.text_field :desired_age_min, :class=> "desired_age_min" %>
-
-    <%= f.label :minimum_age %><span class="colon">:</span>
-    <%= f.text_field :desired_age_max, :class=> "desired_age_max" %>
   </p>
 
   <p>
@@ -120,30 +65,16 @@
 	<label class="day_available" for="desired_smoking_preference_no">No</label>
   </p>
 
-
-
   <p>
-    <%= f.label :approved_by %><br />
-    <%= f.text_field :approved_by %>
-  </p>
-  <p>
-    <%= f.label :approval_date %><br />
-    <%= f.datetime_select :approval_date %>
-  </p>
-  <p>
-
-
-  <p>
-    <%= f.label :has_a_room %><br />
+    <%= f.label :has_a_room_needs_a_roomate %>
     <%= f.check_box :has_a_room %>
   </p>
 
 
 
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Submit' %>
   </p>
 <% end %>
 </div>
 
-<%= link_to 'Back', users_path %>
