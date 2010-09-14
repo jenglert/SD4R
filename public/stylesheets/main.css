@@ -57,13 +57,13 @@ pre {
 .clearBoth { clear: both; }
 
 /** layout */
-.siteLogo { margin: auto; color: white; width: 400px; padding-right: 230px;}
-H1.sitename { font-size: 54px; color: #D46300; font-style: italic; }
-H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-left: 20px; }
-
-.copyright { font-size: 8px; margin: auto; width: 200px; padding-left: 450px; padding-top: 20px;}
+.siteLogo        { margin: auto; color: white; width: 400px; padding-right: 230px; }
+H1.sitename      { font-size: 54px; color: #D46300; font-style: italic; }
+H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; margin-left: 20px; }
+.copyright       { font-size: 8px; margin: auto; width: 200px; padding-left: 450px; padding-top: 20px; }
 .taglineEmphasis { font-weight: bold; }
-.bottomBanner   { margin: auto; padding-top: 40px; width: 726px;}
+.bottomBanner    { margin: auto; padding-top: 40px; width: 726px; }
+.share           { width: 110px; }
 
 /** Homepage */
 .homepage { margin: auto; padding-left: 20px; width: 580px;}
@@ -75,6 +75,7 @@ H2.tagline { font-size: 15px; margin-top: -30px; font-weight: normal; margin-lef
 .homepageSection .header { font-weight: bold; font-size: 13px; background-image:url('/images/arrow.png'); 
 			background-repeat: no-repeat; background-position: left; padding-left: 20px;}
 .homepageSection .answer { padding-left: 18px; padding-top: 6px; }
+.homepage SELECT         { font-size: 15px; }
 
 /** White background layout */
 .whiteBackgroundLayout { -moz-border-radius: 15px; border-radius: 15px; background-color: white; padding: 15px; width: 600px; margin: auto; }

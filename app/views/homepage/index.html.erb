@@ -38,23 +38,7 @@ You’ll only be mingling with those you might want to share a home with. So beh
 				 
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 	
-				<%= select_tag "city", "
-						<option value=''>Choose A City</option>
-						<option value='9'>New York City, NY</option>
-					    <option value='1'>Atlanta, GA</a></option>
-						<option value='2'>Boston, MA</option>
-						<option value='3'>Chicago, IL</option>
-						<option value='4'>Cleveland, OH</option>
-						<option value='5'>Dallas, TX</option>
-						<option value='6'>Detroit, MI</option>
-						<option value='7'>Houston, TX</option>	
-						<option value='8'>Los Angeles, CA</option>
-					    <option value='10'>Miami, FL</option>
-						<option value='11'>Philadelphia, PA</option>
-						<option value='12'>Phoenix, AZ</option>		
-						<option value='13'>San Francisco, CA</option>							
-						<option value='14'>Seattle, WA</option>
-						<option value='15'>Washington D.C.</option>	", :onChange => "selectACity()"  %>
+				<%= select_tag "city", options_from_collection_for_select(City.all, 'id', 'name'), :onChange => "selectACity()"  %>
 					
 			
 				
