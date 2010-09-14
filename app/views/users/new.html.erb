@@ -29,6 +29,20 @@
 		<%= f.label :Date_of_Birth %><span class="orangish">:</span>
 		<%= f.date_select :birth_date, :start_year => Time.now.year - 16, :end_year => Time.now.year - 70, :include_blank => true, :order => [:month, :day, :year]  %>
 	</p>
+	<p>
+		<%= f.label :Kids %><span class="orangish">:</span>
+		<% [ 'Yes', 'No' ].each do |has_kids| %>
+			<%= f.radio_button :has_kids, has_kids	  %>
+			<%= f.label "has_kids#{has_kids}", has_kids.humanize %>
+		<% end %>
+	</p>
+	<p>
+		<%= f.label :Pets %><span class="orangish">:</span>
+		<% [ 'Yes', 'No' ].each do |has_pets| %>
+			<%= f.radio_button :has_pets, has_pets	  %>
+			<%= f.label "has_pets#{has_pets}", has_pets.humanize %>
+		<% end %>
+	</p>
 	<BR>
 		
 		  <div class="header">
@@ -67,6 +81,20 @@
 	  <% [ 'Yes', 'No' ].each do |smoking| %>
 	    <%= f.radio_button :desired_smoking_preference, smoking %>
 	    <%= f.label "smoking#{smoking}", smoking.humanize %>
+	<% end %>
+	</p>
+	<p>
+	<%= f.label :Kids %><span class="orangish">:</span>
+	  <% [ 'Yes', 'No' ].each do |roomy_kids| %>
+	    <%= f.radio_button :roomy_kids, roomy_kids %>
+	    <%= f.label "roomy_kids#{roomy_kids}", roomy_kids.humanize %>
+	<% end %>
+	</p>
+	<p>
+	<%= f.label :Pets %><span class="orangish">:</span>
+	  <% [ 'Yes', 'No' ].each do |roomy_pets| %>
+	    <%= f.radio_button :roomy_pets, roomy_pets %>
+	    <%= f.label "roomy_pets#{roomy_pets}", roomy_pets.humanize %>
 	<% end %>
 	</p>
 

@@ -59,6 +59,10 @@ ActiveRecord::Schema.define(:version => 20100914015211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "city_id"
+    t.boolean  "has_kids"
+    t.boolean  "roomy_kids"
+    t.boolean  "has_pets"
+    t.boolean  "roomy_pets"
   end
 
 end
