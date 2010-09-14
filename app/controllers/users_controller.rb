@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     end
   end
   
+  # Displays a page indicating our thanks for registering
   def registration_thanks
-    
   end
 end
