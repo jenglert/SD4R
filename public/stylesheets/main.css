@@ -105,3 +105,4 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .registration .desired_age_min { width: 25px; }
 
 .registration .day_available_label { margin-left: -3px; }
+.registration .submit     { margin: 10px 0 0 15px;}
