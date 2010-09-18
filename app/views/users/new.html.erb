@@ -17,6 +17,11 @@
 	<div class="question">
 		<%= f.text_field :email, :class=> "email", :onFocus => "if(this.value=='Email Address') this.value='';", :onBlur => "if(this.value=='') this.value='Email Address';"%> 
 	</div>
+	
+	<div class="question">
+		<label>Neighborhood</label><span class="orangish">:</span>
+		
+	</div>
 
 	<div class="question">
 		<label>Your gender</label><span class="orangish">:</span>
@@ -58,39 +63,38 @@
 	</div>
 	<BR>
 		
-	  <div class="header">
-		<div class="important">Describe what you are looking for</div>
-		<div class="moreInformation">We'll use this to make sure you talk to the right people</div>
-	  </div>
+	<div class="header">
+	    <div class="important">Describe what you are looking for</div>
+	    <div class="moreInformation">We'll use this to make sure you talk to the right people</div>
+  </div>
 	
-	  <div class="question">
-	    <label>How much do you want to spend<span class="orangish">:</span>
-	    <%= f.text_field :desired_rent_min, :class=> "rent_max" %> to 
-		<%= f.text_field :desired_rent_max, :class=> "rent_max" %>
-	  </div>
+	<div class="question">
+	  <label>How much do you want to spend<span class="orangish">:</span>
+    <%= f.text_field :desired_rent_min, :class=> "rent_max" %> to 
+    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
+	</div>
 
-	  <div class="question">
-	    <%= f.label :maximum_number_of_roommates %><span class="orangish">:</span>
-		<%= f.select :desired_number_of_roommates, options_from_collection_for_select(1..4, 'to_s', 'to_s'),  :class=> "desired_number_of_roomates" %>
+	<div class="question">
+	  <%= f.label :maximum_number_of_roommates %><span class="orangish">:</span>
+		<%= f.select :desired_number_of_roommates, options_from_collection_for_select(1..4, 'to_s', 'to_s'),  :class=> "desired_number_of_roomates" %>	
+	 </div>
 	
-	  </div>
-	    <div class="question">
-		  <label>Desired roommate age range<span class="orangish">:</span>
-		  <%= f.select :desired_age_min, options_from_collection_for_select(16..70, 'to_s', 'to_s'),  :class=> "desired_age_min" %>
-			to
-		  <%= f.select :desired_age_max, options_from_collection_for_select((16..70).to_a.reverse, 'to_s', 'to_s'),  :class=> "desired_age_max" %>
+	 <div class="question">
+	   <label>Desired roommate age range<span class="orangish">:</span>
+		 <%= f.select :desired_age_min, options_from_collection_for_select(16..70, 'to_s', 'to_s'),  :class=> "desired_age_min" %>
+		 to
+		 <%= f.select :desired_age_max, options_from_collection_for_select((16..70).to_a.reverse, 'to_s', 'to_s'),  :class=> "desired_age_max" %>
+  </div>
 
+	<div class="question">	
+		<label>What gender roommate would you live with</label><span class="orangish">:</span>
+		<div>
+      <%= f.check_box :desires_male_roommate, :id => 'desires_male_roommate' %>
+			<label for="desires_male_roommate">male</label>
+			<%= f.check_box :desires_female_roommate, :id => 'desires_female_roommate'  %>
+			<label for="desires_female_roommate">female</label>
 		</div>
-
-		<div class="question">	
-			<label>What gender roommate would you live with</label><span class="orangish">:</span>
-			<div>
-	    		<%= f.check_box :desires_male_roommate, :id => 'desires_male_roommate' %>
-				<label for="desires_male_roommate">male</label>
-				<%= f.check_box :desires_female_roommate, :id => 'desires_female_roommate'  %>
-				<label for="desires_female_roommate">female</label>
-			</div>
-		</div>
+	</div>
 	
 	<div class="question">
 		<label>Smokers ok</label><span class="orangish">:</span>
