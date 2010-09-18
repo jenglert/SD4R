@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100915020220) do
+ActiveRecord::Schema.define(:version => 20100918010806) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -31,11 +31,7 @@ ActiveRecord::Schema.define(:version => 20100915020220) do
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "current_address"
-    t.integer  "current_zip_code"
-    t.string   "current_state"
     t.string   "current_city"
-    t.integer  "desired_location_id"
     t.string   "phone_number"
     t.string   "email"
     t.string   "gender"
@@ -45,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20100915020220) do
     t.integer  "religion_id"
     t.integer  "desired_rent_min"
     t.integer  "desired_rent_max"
-    t.string   "available_days"
     t.integer  "available_hours"
     t.integer  "approved_by"
     t.datetime "approval_date"
@@ -65,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20100915020220) do
     t.string   "user_description"
     t.boolean  "desires_male_roommate"
     t.boolean  "desires_female_roommate"
+    t.integer  "neighborhood_id"
   end
 
 end

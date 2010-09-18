@@ -20,7 +20,8 @@
 	
 	<div class="question">
 		<label>Neighborhood</label><span class="orangish">:</span>
-		
+		<%= f.select :neighborhood_id, options_from_collection_for_select([IdName.new(0, '-Select-')] + Neighborhood.find_all_by_city_id(@user.city_id || params[:city_id] || 9), 'id', 'name', @user.neighborhood_id) #Hack.  We default to NYC
+		 %>
 	</div>
 
 	<div class="question">
