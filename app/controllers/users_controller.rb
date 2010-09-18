@@ -8,6 +8,10 @@ class UsersController < ApplicationController
       format.xml  { render :xml => @user }
     end
   end
+  
+  def index
+    redirect_to :action => 'new'
+  end
 
   def new
     @user = User.new(:first_name => 'First Name', :last_name => 'Last Name', :email => "Email Address", :city_id => params[:city_id])
