@@ -1,6 +1,9 @@
-  require 'resolv'
 class User < ActiveRecord::Base
-  validates_presence_of :first_name, :last_name, :birth_date, :gender, :email
+  validates_presence_of :first_name, :last_name, :age, :gender, :email, :has_kids, :has_pets
+  validates_presence_of :desired_rent_min, :desired_rent_max, :desired_number_of_roommates, :desired_age_min
+  validates_presence_of :desired_age_max, :desired_smoking_preference
+  validates_presence_of :roomy_kids, :roomy_pets, :user_description
+  
   validates_uniqueness_of :email, :if => Proc.new { |user| user.email }
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, :if => Proc.new { |user| user.email }
   
@@ -18,5 +21,5 @@ class User < ActiveRecord::Base
       end
       @mx.size > 0 ? true : false
   end
-  
+
 end

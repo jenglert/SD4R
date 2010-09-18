@@ -5,102 +5,118 @@
   <%= f.hidden_field :city_id %>
 
   <div class="header">
-	<span class="important">Who you are</span>
+	<div class="important">Tell us about yourself</div>
+	<div class="moreInformation">We promise not to give your information to anyone!</div>
   </div>
 
-	<p>
+	<div class="question">
 		<%= f.text_field :first_name, :class => 'first_name', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
 		<%= f.text_field :last_name, :class=> "last_name", :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
-	</p>
+	</div>
 
-	<p>
+	<div class="question">
 		<%= f.text_field :email, :class=> "email", :onFocus => "if(this.value=='Email Address') this.value='';", :onBlur => "if(this.value=='') this.value='Email Address';"%> 
-	</p>
+	</div>
 
-	<p>
-		<%= f.label :gender %><span class="orangish">:</span>
+	<div class="question">
+		<label>Your gender</label><span class="orangish">:</span>
 		<% [ 'male', 'female' ].each do |gender| %>
-			<%= f.radio_button :gender, gender	  %>
-			<%= f.label "gender#{gender}", gender.humanize %>
+			<%= f.radio_button :gender, gender[0].chr	  %>
+			<%= f.label "gender_#{gender[0].chr}", gender.humanize %>
 		<% end %>
-	</p>
+	</div>
 	
-	<p>
-		<%= f.label :Date_of_Birth %><span class="orangish">:</span>
-		<%= f.date_select :birth_date, :start_year => Time.now.year - 16, :end_year => Time.now.year - 70, :include_blank => true, :order => [:month, :day, :year]  %>
-	</p>
-	<p>
-		<%= f.label :Kids %><span class="orangish">:</span>
-		<% [ 'Yes', 'No' ].each do |has_kids| %>
-			<%= f.radio_button :has_kids, has_kids	  %>
-			<%= f.label "has_kids#{has_kids}", has_kids.humanize %>
-		<% end %>
-	</p>
-	<p>
-		<%= f.label :Pets %><span class="orangish">:</span>
-		<% [ 'Yes', 'No' ].each do |has_pets| %>
-			<%= f.radio_button :has_pets, has_pets	  %>
-			<%= f.label "has_pets#{has_pets}", has_pets.humanize %>
-		<% end %>
-	</p>
+	<div class="question">
+		<label>Age<span class="orangish">:</span>
+		<%= f.select :age, options_from_collection_for_select(18..70, 'to_s', 'to_s')  %>
+	</div>
+	<div class="question">
+		<label>Do you have kids</label><span class="orangish">:</span>
+		<%= f.radio_button :has_kids, true, :id => 'has_kids_true' %>
+		<label for="has_kids_true">yes</label>
+		<%= f.radio_button :has_kids, false, :id => 'has_kids_false'%>
+		<label for="has_kids_false">no</label>
+	</div>
+	<div class="question">
+		<label>Do you have pets</label><span class="orangish">:</span>
+		<%= f.radio_button :has_pets, true, :id => 'has_pets_true' %>
+		<label for="has_pets_true">yes</label>
+		<%= f.radio_button :has_pets, false, :id => 'has_pets_false'%>
+		<label for="has_pets_false">no</label>
+	</div>
+	<div class="question">
+		<label>When do you want to move in</label><span class="orangish">:</span>
+		<%= f.radio_button :has_pets, true, :id => 'has_pets_true' %>
+		<label for="has_pets_true">yes</label>
+		<%= f.radio_button :has_pets, false, :id => 'has_pets_false'%>
+		<label for="has_pets_false">no</label>
+	</div>
+	<div class="question">
+		<label>Write a couple sentences about yourself<br/> so people can remember you</label><span class="orangish">:</span>
+		<br/>
+		<%= f.text_area :user_description, :rows => 3 %>
+	</div>
 	<BR>
 		
-		  <div class="header">
-			<span class="important">What you need</span>
-		  </div>
-	  <p>
-	    <%= f.label :maximum_monthly_rent %><span class="orangish">:</span>
-	    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
-	  </p>
+	  <div class="header">
+		<div class="important">Describe what you are looking for</div>
+		<div class="moreInformation">We'll use this to make sure you talk to the right people</div>
+	  </div>
+	
+	  <div class="question">
+	    <label>How much do you want to spend<span class="orangish">:</span>
+	    <%= f.text_field :desired_rent_min, :class=> "rent_max" %> to 
+		<%= f.text_field :desired_rent_max, :class=> "rent_max" %>
+	  </div>
 
-	  <p>
+	  <div class="question">
 	    <%= f.label :maximum_number_of_roommates %><span class="orangish">:</span>
 		<%= f.select :desired_number_of_roommates, options_from_collection_for_select(1..4, 'to_s', 'to_s'),  :class=> "desired_number_of_roomates" %>
 	
-	  </p>
-
-		<p>
-		  <%= f.label :minimum_age %><span class="orangish">:</span>
+	  </div>
+	    <div class="question">
+		  <label>Desired roommate age range<span class="orangish">:</span>
 		  <%= f.select :desired_age_min, options_from_collection_for_select(16..70, 'to_s', 'to_s'),  :class=> "desired_age_min" %>
-			&nbsp;
-		  <%= f.label :maximum_age %><span class="orangish">:</span>
+			to
 		  <%= f.select :desired_age_max, options_from_collection_for_select((16..70).to_a.reverse, 'to_s', 'to_s'),  :class=> "desired_age_max" %>
 
-		</p>
+		</div>
 
-		<p>	
-		<%= f.label :gender %><span class="orangish">:</span>
-		  <% [ 'male', 'female' ].each do |gender| %>
-		    <%= f.radio_button:desired_gender, gender	  %>
-		    <%= f.label "gender#{gender}", gender.humanize %>
-		<% end %>
-		</p>
+		<div class="question">	
+			<label>What gender roommate would you live with</label><span class="orangish">:</span>
+			<div>
+	    		<%= f.check_box :desires_male_roommate, :id => 'desires_male_roommate' %>
+				<label for="desires_male_roommate">male</label>
+				<%= f.check_box :desires_female_roommate, :id => 'desires_female_roommate'  %>
+				<label for="desires_female_roommate">female</label>
+			</div>
+		</div>
 	
-	<p>
-	<%= f.label :Smoking %><span class="orangish">:</span>
-	  <% [ 'Yes', 'No' ].each do |smoking| %>
-	    <%= f.radio_button :desired_smoking_preference, smoking %>
-	    <%= f.label "smoking#{smoking}", smoking.humanize %>
-	<% end %>
-	</p>
-	<p>
-	<%= f.label :Kids %><span class="orangish">:</span>
-	  <% [ 'Yes', 'No' ].each do |roomy_kids| %>
-	    <%= f.radio_button :roomy_kids, roomy_kids %>
-	    <%= f.label "roomy_kids#{roomy_kids}", roomy_kids.humanize %>
-	<% end %>
-	</p>
-	<p>
-	<%= f.label :Pets %><span class="orangish">:</span>
-	  <% [ 'Yes', 'No' ].each do |roomy_pets| %>
-	    <%= f.radio_button :roomy_pets, roomy_pets %>
-	    <%= f.label "roomy_pets#{roomy_pets}", roomy_pets.humanize %>
-	<% end %>
-	</p>
+	<div class="question">
+		<label>Smokers ok</label><span class="orangish">:</span>
+		<%= f.radio_button :desired_smoking_preference, true, :id => 'desired_smoking_preference_yes' %>
+		<label for="desired_smoking_preference_yes">yes</label>
+		<%= f.radio_button :desired_smoking_preference, false, :id => 'desired_smoking_preference_no' %>
+		<label for="desired_smoking_preference_no">no</label>
+	</div>
+	<div class="question">
+		<label>Kids ok</label><span class="orangish">:</span>
+		<%= f.radio_button :roomy_kids, true, :id => 'roomy_kids_yes' %>
+		<label for="roomy_kids_yes">yes</label>
+		<%= f.radio_button :roomy_kids, false, :id => 'roomy_kids_no' %>
+		<label for="roomy_kids_no">no</label>		
+	</div>
+	<div class="question">
+		<label>Pets ok</label><span class="orangish">:</span>
+		<%= f.radio_button :roomy_pets, true, :id => 'roomy_pets_yes' %>
+		<label for="roomy_pets_yes">yes</label>
+		<%= f.radio_button :roomy_pets, false, :id => 'roomy_pets_no' %>
+		<label for="roomy_pets_no">no</label>
+	</div>
 
-  <p>
+  <div>
     <%= f.submit 'Submit', :class => "submit" %>
-  </p>
+  </div>
 <% end %>
 </div>
 

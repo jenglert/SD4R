@@ -82,6 +82,7 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 
 /** Registration */
 .registration .header { font-size: 16px; }
+.registration .moreInformation { font-size: 11px; padding-left: 1px; }
 .registration .header .important { font-size: 17px; font-weight: bold; color: #D46300; }
 .registration .first_name { margin-right: 15px; width: 100px; }
 .registration .last_name { width: 100px; }
@@ -89,6 +90,7 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .registration .phone_number { width: 70px; }
 .registration .age { width: 22px; }
 .registration .gender { width: 44px; }
+.registration .question { padding: 8px 0 8px 0; }
 
 .registration .current_city { width: 200px; }
 .registration .current_state { width: 25px; }

@@ -23,6 +23,10 @@ class UsersController < ApplicationController
     if @user.save
       render :action => 'registration_thanks'
     else
+      @user.first_name = 'First Name' if @user.first_name.nil?
+      @user.last_name = 'Last Name' if @user.last_name.nil?
+      @user.email = 'Email Address' if @user.email.nil?
+      
       render :action => 'new'
     end
   end
