@@ -52,10 +52,7 @@
 	</div>
 	<div class="question">
 		<label>When do you want to move in</label><span class="orangish">:</span>
-		<%= f.radio_button :has_pets, true, :id => 'has_pets_true' %>
-		<label for="has_pets_true">yes</label>
-		<%= f.radio_button :has_pets, false, :id => 'has_pets_false'%>
-		<label for="has_pets_false">no</label>
+		<%= f.select :desired_move_in_month, options_from_collection_for_select([IdName.new(0, '-Select-')] + move_in_dates, 'first', 'last',  "#{@user.desired_move_in_month.strftime('%b %d, %Y')}")%>
 	</div>
 	<div class="question">
 		<label>Write a couple sentences about yourself<br/> so people can remember you</label><span class="orangish">:</span>

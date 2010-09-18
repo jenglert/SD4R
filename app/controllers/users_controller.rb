@@ -15,6 +15,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    begin
+      @user.desired_move_in_month ||= Time.parse(params[:desired_move_in_month])
+    rescue
+    end
     
     @user.first_name = nil if @user.first_name == 'First Name'
     @user.last_name = nil if @user.last_name == 'Last Name'

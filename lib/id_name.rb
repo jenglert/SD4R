@@ -5,5 +5,13 @@ class IdName
 	  self.id = id
 	  self.name = name
   end
+  
+  def first
+    id
+  end
+  
+  def last
+    name
+  end
 	
 end

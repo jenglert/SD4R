@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :age, :gender, :email
   validates_presence_of :desired_rent_min, :desired_rent_max, :desired_number_of_roommates, :desired_age_min
-  validates_presence_of :user_description, :neighborhood_id, :desired_age_max
+  validates_presence_of :user_description, :neighborhood_id, :desired_age_max, :desired_move_in_month
   validates_inclusion_of :has_kids, :in => [true, false], :message => " must be specified"
   validates_inclusion_of :has_pets, :in => [true, false], :message => " must be specified"
   validates_inclusion_of :desired_smoking_preference, :in => [true, false], :message => " must be specified"

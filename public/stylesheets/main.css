@@ -49,6 +49,11 @@ pre {
   list-style: square;
 }
 
+a { color: #D46300; text-decoration: none; }
+a:visited { color: #D46300; text-decoration: none; }
+a:click { color: #D46300; text-decoration: none; }
+a:hovor { color: #D46300; text-decoration: none; }
+
 /* general */
 .taglineSmall { color: #D46300; }
 .orangish { color: #D46300;}
