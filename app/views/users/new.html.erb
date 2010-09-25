@@ -20,7 +20,7 @@
 	
 	<div class="question">
 		<label>Neighborhood</label><span class="orangish">:</span>
-		<%= f.select :neighborhood_id, options_from_collection_for_select([IdName.new(0, '-Select-')] + Neighborhood.find_all_by_city_id(@user.city_id || params[:city_id] || 9), 'id', 'name', @user.neighborhood_id) #Hack.  We default to NYC
+		<%= f.select :neighborhood_id, option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(@user.city_id || params[:city_id] || 9), 'members', 'grouping', 'id', 'name', @user.neighborhood_id) #Hack.  We default to NYC
 		 %>
 	</div>
 
@@ -37,23 +37,18 @@
 		<%= f.select :age, options_from_collection_for_select(18..70, 'to_s', 'to_s')  %>
 	</div>
 	<div class="question">
-		<label>Do you have kids</label><span class="orangish">:</span>
-		<%= f.radio_button :has_kids, true, :id => 'has_kids_true' %>
-		<label for="has_kids_true">yes</label>
-		<%= f.radio_button :has_kids, false, :id => 'has_kids_false'%>
-		<label for="has_kids_false">no</label>
-	</div>
-	<div class="question">
-		<label>Do you have pets</label><span class="orangish">:</span>
-		<%= f.radio_button :has_pets, true, :id => 'has_pets_true' %>
-		<label for="has_pets_true">yes</label>
-		<%= f.radio_button :has_pets, false, :id => 'has_pets_false'%>
-		<label for="has_pets_false">no</label>
-	</div>
-	<div class="question">
 		<label>When do you want to move in</label><span class="orangish">:</span>
 		<%= f.select :desired_move_in_month, options_from_collection_for_select([IdName.new(0, '-Select-')] + move_in_dates, 'first', 'last',  "#{@user.andand.desired_move_in_month.andand.strftime('%b %d, %Y')}")%>
 	</div>
+	
+	<div class="question">
+		<label>Do you currently have a place?</label><span class="orangish">:</span>
+		<%= f.radio_button :has_a_room, true, :id => 'has_a_room_yes' %>
+		<label for="has_a_room_yes">yes</label>
+		<%= f.radio_button :has_a_room, false, :id => 'has_a_room_no' %>
+		<label for="has_a_room_no">no</label>
+	</div>
+	
 	<div class="question">
 		<label>Write a couple sentences about yourself<br/> so people can remember you</label><span class="orangish">:</span>
 		<br/>
@@ -71,11 +66,6 @@
     <%= f.text_field :desired_rent_min, :class=> "rent_max" %> to 
     <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
 	</div>
-
-	<div class="question">
-	  <%= f.label :maximum_number_of_roommates %><span class="orangish">:</span>
-		<%= f.select :desired_number_of_roommates, options_from_collection_for_select(1..4, 'to_s', 'to_s'),  :class=> "desired_number_of_roomates" %>	
-	 </div>
 	
 	 <div class="question">
 	   <label>Desired roommate age range<span class="orangish">:</span>
@@ -100,20 +90,6 @@
 		<label for="desired_smoking_preference_yes">yes</label>
 		<%= f.radio_button :desired_smoking_preference, false, :id => 'desired_smoking_preference_no' %>
 		<label for="desired_smoking_preference_no">no</label>
-	</div>
-	<div class="question">
-		<label>Kids ok</label><span class="orangish">:</span>
-		<%= f.radio_button :roomy_kids, true, :id => 'roomy_kids_yes' %>
-		<label for="roomy_kids_yes">yes</label>
-		<%= f.radio_button :roomy_kids, false, :id => 'roomy_kids_no' %>
-		<label for="roomy_kids_no">no</label>		
-	</div>
-	<div class="question">
-		<label>Pets ok</label><span class="orangish">:</span>
-		<%= f.radio_button :roomy_pets, true, :id => 'roomy_pets_yes' %>
-		<label for="roomy_pets_yes">yes</label>
-		<%= f.radio_button :roomy_pets, false, :id => 'roomy_pets_no' %>
-		<label for="roomy_pets_no">no</label>
 	</div>
 
   <div>
