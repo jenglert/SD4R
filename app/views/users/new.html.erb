@@ -26,7 +26,7 @@
 
 	<div class="question">
 		<label>Your gender</label><span class="orangish">:</span>
-		<% [ 'male', 'female' ].each do |gender| %>
+		<% [ 'Male', 'Female' ].each do |gender| %>
 			<%= f.radio_button :gender, gender[0].chr	  %>
 			<%= f.label "gender_#{gender[0].chr}", gender.humanize %>
 		<% end %>
@@ -44,9 +44,9 @@
 	<div class="question">
 		<label>Do you currently have a place?</label><span class="orangish">:</span>
 		<%= f.radio_button :has_a_room, true, :id => 'has_a_room_yes' %>
-		<label for="has_a_room_yes">yes</label>
+		<label for="has_a_room_yes">Yes</label>
 		<%= f.radio_button :has_a_room, false, :id => 'has_a_room_no' %>
-		<label for="has_a_room_no">no</label>
+		<label for="has_a_room_no">No</label>
 	</div>
 	
 	<div class="question">
@@ -78,18 +78,18 @@
 		<label>What gender roommate would you live with</label><span class="orangish">:</span>
 		<div>
       <%= f.check_box :desires_male_roommate, :id => 'desires_male_roommate' %>
-			<label for="desires_male_roommate">male</label>
+			<label for="desires_male_roommate">Male</label>
 			<%= f.check_box :desires_female_roommate, :id => 'desires_female_roommate'  %>
-			<label for="desires_female_roommate">female</label>
+			<label for="desires_female_roommate">Female</label>
 		</div>
 	</div>
 	
 	<div class="question">
 		<label>Smokers ok</label><span class="orangish">:</span>
 		<%= f.radio_button :desired_smoking_preference, true, :id => 'desired_smoking_preference_yes' %>
-		<label for="desired_smoking_preference_yes">yes</label>
+		<label for="desired_smoking_preference_yes">Yes</label>
 		<%= f.radio_button :desired_smoking_preference, false, :id => 'desired_smoking_preference_no' %>
-		<label for="desired_smoking_preference_no">no</label>
+		<label for="desired_smoking_preference_no">No</label>
 	</div>
 
   <div>

@@ -46,6 +46,9 @@ div.button span {
 
 input.text,
 input.email, 
+input.first_name,
+input.last_name,
+input.rent_max,
 input.password,
 textarea.uniform {
   font-size: 12px;
