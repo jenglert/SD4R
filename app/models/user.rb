@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates_presence_of :first_name, :last_name, :age, :gender, :email
+  validates_presence_of :first_name, :last_name, :age, :gender, :email, :password
   validates_presence_of :desired_rent_min, :desired_rent_max, :desired_age_min
   validates_presence_of :user_description, :neighborhood_id, :desired_age_max, :desired_move_in_month
   validates_inclusion_of :has_a_room, :in => [true, false], :message => " must be specified"

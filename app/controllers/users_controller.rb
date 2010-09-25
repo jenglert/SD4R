@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new(:first_name => 'First Name', :last_name => 'Last Name', :email => "Email Address", :city_id => params[:city_id])
+    @user = User.new(:first_name => 'First Name', :last_name => 'Last Name', :email => "Email Address", :password => 'Password', :city_id => params[:city_id])
   end
 
   def create
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     @user.first_name = nil if @user.first_name == 'First Name'
     @user.last_name = nil if @user.last_name == 'Last Name'
     @user.email = nil if @user.email == 'Email Address'
+    @user.password = nil if @user.password == 'Password'
     
     if @user.save
       render :action => 'registration_thanks'
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
       @user.first_name = 'First Name' if @user.first_name.nil?
       @user.last_name = 'Last Name' if @user.last_name.nil?
       @user.email = 'Email Address' if @user.email.nil?
+      @user.password = 'Password' if @user.password.nil?
       
       render :action => 'new'
     end

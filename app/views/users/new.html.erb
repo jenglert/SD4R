@@ -10,12 +10,16 @@
   </div>
 
 	<div class="question">
-		<%= f.text_field :first_name, :class => 'first_name', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
-		<%= f.text_field :last_name, :class=> "last_name", :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
+		<%= f.text_field :first_name, :class => 'first_name text', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
+		<%= f.text_field :last_name, :class=> "last_name text", :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
 	</div>
 
 	<div class="question">
 		<%= f.text_field :email, :class=> "email", :onFocus => "if(this.value=='Email Address') this.value='';", :onBlur => "if(this.value=='') this.value='Email Address';"%> 
+	</div>
+	
+	<div class="question">
+		<%= f.text_field :password, :class=> "password", :onFocus => "if(this.value=='Password') this.value='';", :onBlur => "if(this.value=='') this.value='Password';"%> 
 	</div>
 	
 	<div class="question">
@@ -26,7 +30,7 @@
 
 	<div class="question">
 		<label>Your gender</label><span class="orangish">:</span>
-		<% [ 'Male', 'Female' ].each do |gender| %>
+		<% [ 'male', 'female' ].each do |gender| %>
 			<%= f.radio_button :gender, gender[0].chr	  %>
 			<%= f.label "gender_#{gender[0].chr}", gender.humanize %>
 		<% end %>
@@ -63,8 +67,8 @@
 	
 	<div class="question">
 	  <label>How much do you want to spend<span class="orangish">:</span>
-    <%= f.text_field :desired_rent_min, :class=> "rent_max" %> to 
-    <%= f.text_field :desired_rent_max, :class=> "rent_max" %>
+    <%= f.text_field :desired_rent_min, :class=> "rent_max text" %> to 
+    <%= f.text_field :desired_rent_max, :class=> "rent_max text" %>
 	</div>
 	
 	 <div class="question">
