@@ -55,11 +55,15 @@ a:click { color: #D46300; text-decoration: none; }
 a:hovor { color: #D46300; text-decoration: none; }
 
 /* general */
-.taglineSmall { color: #D46300; }
-.orangish { color: #D46300;}
-.floatLeft { float: left; }
-.floatRight { float: right; }
-.clearBoth { clear: both; }
+.taglineSmall   { color: #D46300; }
+.orangish       { color: #D46300;}
+.floatLeft      { float: left; }
+.floatRight     { float: right; }
+.clearBoth      { clear: both; }
+.titleContainer { position: relative; height: 40px; padding-bottom: 10px; }
+H2.title        { font-size: 28px; position: absolute; top: 0px; left: 0px; z-index: 100; } 
+H2.titleBack    { font-size: 28px; color: #D46300; position: absolute; top: 1px; left: 1px; }
+H3              { color: #D46300; padding-left: 3px; }
 
 /** layout */
 .siteLogo        { margin: auto; color: white; width: 400px; padding-right: 230px; }
@@ -69,6 +73,7 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .taglineEmphasis { font-weight: bold; }
 .bottomBanner    { margin: auto; padding-top: 40px; width: 726px; }
 .share           { width: 110px; }
+.bottomNav       { text-align: center; padding-top: 10px; font-size: 12px; }
 
 /** Homepage */
 .homepage { margin: auto; padding-left: 20px; width: 580px;}
@@ -113,3 +118,6 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 
 .registration .day_available_label { margin-left: -3px; }
 .registration .submit     { margin: 10px 0 0 15px;}
+
+/* host an event */
+.hostAnEvent .section { padding-left: 25px; }

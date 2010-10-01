@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<%= render :partial => 'partials/head.html.erb' %>
-		<title>Vroommates!</title>
+		<title><%= @page_title.nil? ? '' : "#{@page_title} - " %>Vroommates</title>
 		<link rel="SHORTCUT ICON" href="/favicon.ico">
 		
 	</head>
@@ -29,11 +29,15 @@
 					<!-- AddThis Button END -->
 				</div>
 				<div class="clearBoth"></div>
+				<div class="bottomNav">
+					<%= link_to '[Host an Event]', '/host-an-event' %>
+					<%= link_to '[Privacy Policy]', '/privacy-policy' %>
+					<%= link_to '[Contact Us]', '/contact-us' %>
+				</div>
 			</div>
 		</div>
 		
 		<script type="text/javascript">
-
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-18499048-1']);
 		  _gaq.push(['_trackPageview']);
@@ -43,7 +47,6 @@
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
-
 		</script>
 	</body>
 </html>
