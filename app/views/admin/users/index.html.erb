@@ -21,8 +21,8 @@
 				<td><%= user.full_name %></td>
 				<td><%= user.move_in_month_friendly %></td>
 				<td><%= user.gender_long %></td>
-				<td><%= user.city.name %></td>
-				<td><%= user.neighborhood.name %></td>
+				<td><%= user.city.andand.name %></td>
+				<td><%= user.neighborhood.andand.name %></td>
 				<td><span id="userDetail<%= user.id %>" class="ui-icon ui-icon-search handIcon userDetail"></span></td>
 			</tr>
 		<% end %>
