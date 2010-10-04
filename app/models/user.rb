@@ -18,14 +18,20 @@ class User < ActiveRecord::Base
   end
   
   def full_name
-    last_name + ", " + first_name
+    "#{last_name}, #{first_name}"
   end
   
   def move_in_month_friendly
+    if !desired_move_in_month
+      return ""
+    
     "#{desired_move_in_month.strftime('%b %d, %Y')}"
   end
   
   def gender_long
+    if !gender
+      return ""
+    
     return "Male" if gender == 'm'
     "Female"
   end
