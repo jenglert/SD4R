@@ -26,12 +26,4 @@ class User < ActiveRecord::Base
     
     "#{desired_move_in_month.strftime('%b %d, %Y')}"
   end
-  
-  def gender_long
-    return "" if !gender
-    
-    return "Male" if gender == 'm'
-    "Female"
-  end
-
 end

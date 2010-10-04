@@ -20,7 +20,7 @@
 				<td><%= link_to user.email, "mailto:#{user.email}" %></td>
 				<td><%= user.full_name %></td>
 				<td><%= user.move_in_month_friendly %></td>
-				<td><%= user.gender_long %></td>
+				<td><%= user.gender.humanize %></td>
 				<td><%= user.city.andand.name %></td>
 				<td><%= user.neighborhood.andand.name %></td>
 				<td><span id="userDetail<%= user.id %>" class="ui-icon ui-icon-search handIcon userDetail"></span></td>
