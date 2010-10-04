@@ -1,0 +1,36 @@
+/* General */
+BODY               { background-color: #555; }
+TABLE              { border-collapse : collapse; }
+TABLE TD, TABLE TH { padding : 0; }
+.orangish          { color: #D46300; }
+.handIcon          { cursor: pointer; }
+.displayNone       { display: none; }
+
+
+/* The layout */
+.adminLayout            { width: 900px; margin: auto; border: 1px solid black; background-color: white; }
+.adminLayout TD         { padding: 0px; margin: 0px; }
+.adminLayout .header    { background-color: #008685; height: 75px; }
+.adminLayout .tagline   { color: #FA0000; font-size: 50px; font-weight: bold; top: 18px; left: 460px; position: absolute; }
+.adminLayout .logAndTag { position: relative; }
+.adminLayout .body      { padding: 0 15px 30px 15px; }
+
+/* Navlist */
+.navlist { margin: 0; padding: 10px 0 20px 10px; border-bottom: 1px solid #000; font-size: 18px; margin-bottom: 5px; font-variant: small-caps;}
+.navlist ul, 
+.navlist li { margin: 0; padding: 0; display: inline; list-style-type: none; }
+.navlist a:link, 
+.navlist a:visited { float: left; line-height: 14px; font-weight: bold; margin: 0 10px 4px 10px; text-decoration: none; color: #FA0000; }
+.navlist a:link#current, 
+.navlist a:visited#current, 
+.navlist a:hover { border-bottom: 4px solid #000; padding-bottom: 2px; background: transparent; color: #000; }
+.navlist a:hover { color: #000; }
+
+/* Users page */
+.adminUsers .listing TH { background-color: #00A6A5; color: #D46300; font-weight: bolder; font-size: 22px; }
+.adminUsers .listing TD,
+.adminUsers .listing TH  { padding: 2px 7px 2px 7px; }
+.adminUsers .listing .oddRow { background-color: #DDD; }
+
+/* User popup */
+.userDetailPopup   { width: 600px; position: absolute; margin: auto; top: 30px; background-color: #EEE; border: 1px solid black; }

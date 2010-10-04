@@ -1,5 +1,6 @@
 class Neighborhood < ActiveRecord::Base
   belongs_to :city
+  has_many :users
   
   class NeighborhoodGroup
     attr_accessor :grouping

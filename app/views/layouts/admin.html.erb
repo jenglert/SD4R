@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<link type="text/css" href="/stylesheets/redmond/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
+		<link type="text/css" href="/stylesheets/admin.css" rel="stylesheet" />	
+		<link type="text/css" href="/stylesheets/uniform.default.css" rel="stylesheet" />			
+		<script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="/javascripts/jquery-ui-1.8.4.custom.min.js"></script>
+		<script type="text/javascript" src="/javascripts/admin.js"></script>
+		<title>VroomMates Admin</title>
+	</head>
+	<body>
+		<table class="adminLayout">
+			<tr>
+				<td class="header">
+					<div class="logAndTag">
+						<%= image_tag "vroommates_logo.png", :alt => 'Vroommates Logo' %> 
+						<span class="tagline">
+							Admin
+						</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ul class="navlist">
+						<li><%= link_to 'users', :controller => 'admin/users', :action => 'index'%></li>
+						<li><%= link_to 'events', :controller => 'admin/events', :action => 'index' %></li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td class="body">
+					<%= yield %>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -43,6 +43,10 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'privacy-policy', :controller => 'static_pages', :action => 'privacy_policy'
   map.connect 'contact-us', :controller => 'static_pages', :action => 'contact_us'
   
+  map.namespace :admin do |admin|
+    admin.resources :users, :events
+  end
+  
   map.resources :users
     
   map.root :controller => "homepage"

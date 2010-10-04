@@ -1,0 +1,32 @@
+<div class="adminUsers">
+	<h2>
+		Users
+	</h2>
+	
+	<table class="listing">
+		<tr>
+			<th>Id</th>
+			<th>Email</th>
+			<th>Name</th>
+			<th>Move-in</th>
+			<th>Gender</th>
+			<th>City</th>
+			<th>Neighborhood</th>
+			<th>&nbsp;</th>
+		</tr>
+		<% @users.each_with_index do |user, i| %>
+			<tr class="<%= i % 2 == 1 ? 'oddRow' : '' %>">
+				<td><%= link_to user.id, :controller => 'admin/users', :action => 'show', :id => user.id %>
+				<td><%= link_to user.email, "mailto:#{user.email}" %></td>
+				<td><%= user.full_name %></td>
+				<td><%= user.move_in_month_friendly %></td>
+				<td><%= user.gender_long %></td>
+				<td><%= user.city.name %></td>
+				<td><%= user.neighborhood.name %></td>
+				<td><span id="userDetail<%= user.id %>" class="ui-icon ui-icon-search handIcon userDetail"></span></td>
+			</tr>
+		<% end %>
+	</table>
+	
+	<div class="userDetailPopup displayNone" id="userDetailPopup"></div>
+</div>
