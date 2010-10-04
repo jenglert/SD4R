@@ -22,15 +22,13 @@ class User < ActiveRecord::Base
   end
   
   def move_in_month_friendly
-    if !desired_move_in_month
-      return ""
+    return "" if !desired_move_in_month
     
     "#{desired_move_in_month.strftime('%b %d, %Y')}"
   end
   
   def gender_long
-    if !gender
-      return ""
+    return "" if !gender
     
     return "Male" if gender == 'm'
     "Female"
