@@ -10,7 +10,7 @@ class AdminController < ApplicationController
   
   def http_auth
     authenticate_or_request_with_http_basic do |user_name, password|
-      user_name == 'admin' && password == 'vr00mat3s'
+      user_name == 'admin' && password == 'vr00mmat3s'
     end
     
   end
