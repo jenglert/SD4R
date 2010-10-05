@@ -1,5 +1,17 @@
 <div class="userShow">
 	<h2><%= @user.id %> - <%= @user.full_name %></h2>
-	//
-	
+	<ul>
+		<li>email: <%= @user.email %></li>
+		<li>phone: <%= @user.phone_number %></li>
+		<li>gender: <%= @user.gender %></li>
+		<li>age: <%= @user.age %></li>
+		<li>birthdate: <%= @user.birth_date %></li>
+		<li>rent range: <%= "#{@user.desired_rent_min} - #{@user.desired_rent_max}" %></li>
+		<li>age range: <%= "#{@user.desired_age_min} - #{@user.desired_age_max}"%></li>
+		<li>move in: <%= "#{@user.move_in_month_friendly}" %></li>
+		<li>city: <%= @user.city.andand.name %></li>
+		<li>neighborhood: <%= @user.neighborhood.andand.name %></li>
+		<li>males ok?: <%= @user.desires_female_roommate %></li>
+		<li>females ok?: <%= @user.desires_male_roommate %></li>
+	</ul>
 </div>
