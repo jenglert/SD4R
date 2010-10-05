@@ -44,7 +44,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'contact-us', :controller => 'static_pages', :action => 'contact_us'
   
   map.namespace :admin do |admin|
-    admin.resources :users, :events
+    admin.resources :users, :events, :landing_pages
   end
   
   map.resources :users

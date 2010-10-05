@@ -1,0 +1,20 @@
+<div class="landingPagesIndex">
+
+	<ul>
+		<li><%= link_to 'Create a New Landing Page', :action => 'new' %></li>
+	</ul>
+	
+	<table class="listing">
+		<tr>
+			<th>Name</th>
+		</tr>
+	<% @landing_pages.each_with_index do |landing_page, i| %>
+		<tr class="<%= i % 2 == 1 ? 'oddRow' : '' %>">
+			<td>
+				<%= landing_page.name %>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+	
+</div>

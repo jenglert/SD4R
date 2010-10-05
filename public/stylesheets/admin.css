@@ -26,11 +26,11 @@ TABLE TD, TABLE TH { padding : 0; }
 .navlist a:hover { border-bottom: 4px solid #000; padding-bottom: 2px; background: transparent; color: #000; }
 .navlist a:hover { color: #000; }
 
-/* Users page */
-.adminUsers .listing TH { background-color: #00A6A5; color: #D46300; font-weight: bolder; font-size: 22px; }
-.adminUsers .listing TD,
-.adminUsers .listing TH  { padding: 2px 7px 2px 7px; }
-.adminUsers .listing .oddRow { background-color: #DDD; }
+/* Tabular listings */
+.listing TH { background-color: #00A6A5; color: #D46300; font-weight: bolder; font-size: 22px; }
+.listing TD,
+.listing TH  { padding: 2px 7px 2px 7px; }
+.listing .oddRow { background-color: #DDD; }
 
 /* User popup */
 .userDetailPopup   { width: 600px; position: absolute; margin: auto; top: 30px; background-color: #EEE; border: 1px solid black; }

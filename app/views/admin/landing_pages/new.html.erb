@@ -1,0 +1,7 @@
+<div class="newLandingPage">
+	<h2>Create a New Landing Page</h2>
+	<% form_for @landing_page, :url => '/admin/landing_page' do |f|  %>
+	 	<%= f.error_messages %>
+	<%= submit_tag 'Create' %>
+	<% end %>
+</div>
