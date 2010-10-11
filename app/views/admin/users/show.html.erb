@@ -1,1 +1,21 @@
 <%= render :partial => 'user_show', :locals => { :user => @user } %>
+
+<% form_for @user_note, :url => '/admin/users/post_note' do |uc| %>
+	<div class="addNoteHeader">Add Note</div>
+	<%= uc.text_area :note, :rows => 4 %>
+	<%= uc.hidden_field :user_id, :value => @user.id %>
+	<%= submit_tag 'Add Note' %>
+<% end %>
+
+<% if @user.user_notes.size > 0 %>
+	<div class="userNotes">
+		<h3><%= @user.user_notes.size %> Notes</h3>
+		<% @user.user_notes.each do |note| %>
+			<div class="userNote">
+				<b><%= note.created_at.simple %>:</b>
+				<%= note.note %>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+	

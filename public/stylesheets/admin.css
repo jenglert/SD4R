@@ -2,13 +2,16 @@
 BODY               { background-color: #555; font-family: "Lucida Grande"; }
 TABLE              { border-collapse : collapse; }
 TABLE TD, TABLE TH { padding : 0; }
+H3                 { padding: 0; margin: 0; }
 .orangish          { color: #D46300; }
 .handIcon          { cursor: pointer; }
 .displayNone       { display: none; }
 .submit            { margin-top: 10px; }
 
 /* Errors */
-.fieldWithErrors  INPUT, TEXTAREA, SELECT { outline: 1px solid red; }
+.fieldWithErrors INPUT, 
+.fieldWithErrors TEXTAREA, 
+.fieldWithErrors SELECT { outline: 1px solid red; }
 .errorExplanation    { background-color: #FFCCCC; padding: 6px 11px 4px 11px; width: 500px; margin: 0 0 10px 0; border: 1px solid red; }
 .errorExplanation H2 { padding: 0px; font-size: 20px; margin: 0; }
 .errorExplanation P  { padding: 5px 0 3px 0; margin: 0; }
@@ -39,6 +42,11 @@ TABLE TD, TABLE TH { padding : 0; }
 .listing TH  { padding: 2px 7px 2px 7px; }
 .listing TD { font-size: 12px; }
 .listing .oddRow { background-color: #DDD; }
+
+/* User show */
+.userShow H2 { padding: 0 0 0 10px; margin: 0; }
+.userShow UL { padding-top: 0px; margin: 0px; }
+.addNoteHeader { margin-top: 15px; width: 173px; }
 
 /* User popup */
 .userDetailPopup   { width: 600px; position: absolute; margin: auto; top: 30px; background-color: #EEE; border: 1px solid black; }
