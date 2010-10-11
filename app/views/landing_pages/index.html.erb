@@ -1,0 +1,15 @@
+<div class="landingPage">
+	<%= @landing_page.content %>
+	<% if @landing_page.style == '1' %>
+		<div class="emailInput" id="emailInput">
+				<form>
+					<input type="text" name="email" class="text" />
+					<div>
+						<input type="submit" value="Notify Me!" class="submit"/>
+					</div>
+				</form>
+		</div>
+	<% end %>
+	
+	<div class="clearBoth"></div>
+</div>

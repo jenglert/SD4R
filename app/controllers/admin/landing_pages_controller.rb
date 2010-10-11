@@ -22,4 +22,11 @@ class Admin::LandingPagesController < AdminController
     @landing_page = LandingPage.find(params[:id])
   end
   
+  def delete_json
+    @landing_page = LandingPage.find(params[:id])
+    @landing_page.destroy
+    
+    render :layout => 'blank'
+  end
+  
 end

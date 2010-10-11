@@ -17,7 +17,7 @@ a:hovor { color: #D46300; text-decoration: none; }
 
 /* general */
 .taglineSmall   { color: #D46300; }
-.orangish       { color: #D46300;}
+.orangish       { color: #D46300; }
 .floatLeft      { float: left; }
 .floatRight     { float: right; }
 .clearBoth      { clear: both; }
@@ -34,7 +34,7 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .taglineEmphasis { font-weight: bold; }
 .bottomBanner    { margin: auto; padding-top: 40px; width: 726px; }
 .share           { width: 110px; }
-.bottomNav       { text-align: center; padding-top: 10px; font-size: 12px; }
+.bottomNav       { text-align: center; font-size: 12px; padding-top: 15px; }
 
 /** Homepage */
 .homepage { margin: auto; padding-left: 20px; width: 580px;}
@@ -82,3 +82,7 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 
 /* host an event */
 .hostAnEvent .section { padding-left: 25px; }
+
+/* Landing page CSS */
+.landingPage .emailInput { float: right; margin-right: 20px; -moz-border-radius: 15px; border-radius: 15px; background-color: #D46300; padding: 15px;}
+.landingPage .submit     { margin-top: 9px; width: 143px; padding: 0px; background: white; }

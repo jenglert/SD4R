@@ -6,12 +6,24 @@
 	
 	<table class="listing">
 		<tr>
+			<th>Id</th>
 			<th>Name</th>
+			<th>Url keyword</th>
+			<th>&nbsp;</th>
 		</tr>
 	<% @landing_pages.each_with_index do |landing_page, i| %>
-		<tr class="<%= i % 2 == 1 ? 'oddRow' : '' %>">
+		<tr class="<%= i % 2 == 1 ? 'oddRow' : '' %>" id="landingPageRow<%= landing_page.id %>">
 			<td>
-				<%= landing_page.name %>
+				<%= landing_page.id %>
+			</td>
+			<td>
+				<%= link_to landing_page.name, :action => 'show', :id => landing_page.id %>
+			</td>
+			<td>
+				<%= landing_page.url_keyword%>
+			</td>
+			<td>
+				<span class="ui-icon ui-icon-closethick" onclick="Admin.removeLandingPage(<%= landing_page.id %>)"></span>
 			</td>
 		</tr>
 	<% end %>

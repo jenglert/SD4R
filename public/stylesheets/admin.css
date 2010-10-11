@@ -5,7 +5,14 @@ TABLE TD, TABLE TH { padding : 0; }
 .orangish          { color: #D46300; }
 .handIcon          { cursor: pointer; }
 .displayNone       { display: none; }
+.submit            { margin-top: 10px; }
 
+/* Errors */
+.fieldWithErrors  INPUT, TEXTAREA, SELECT { outline: 1px solid red; }
+.errorExplanation    { background-color: #FFCCCC; padding: 6px 11px 4px 11px; width: 500px; margin: 0 0 10px 0; border: 1px solid red; }
+.errorExplanation H2 { padding: 0px; font-size: 20px; margin: 0; }
+.errorExplanation P  { padding: 5px 0 3px 0; margin: 0; }
+.errorExplanation UL { margin: 0 0 0 25px; padding: 0; }
 
 /* The layout */
 .adminLayout            { width: 900px; margin: auto; border: 1px solid black; background-color: white; }
@@ -34,3 +41,6 @@ TABLE TD, TABLE TH { padding : 0; }
 
 /* User popup */
 .userDetailPopup   { width: 600px; position: absolute; margin: auto; top: 30px; background-color: #EEE; border: 1px solid black; }
+
+/* Landing page creation page */
+.newLandingPage .section { padding-bottom: 10px; }

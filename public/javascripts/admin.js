@@ -1,3 +1,10 @@
+
+Admin = {};
+
+Admin.removeLandingPage = function(id) {
+	$.getScript("/admin/landing_pages/delete_json/" + id);
+}
+
 $(function () {
 	$('.userDetail').hover(function() {
 		var id = this.id.substring(10);
@@ -12,5 +19,12 @@ $(function () {
 	$('.userDetail').click(function() {
 		var id = this.id.substring(10);
 		window.location = '/admin/users/show/' + id;
+	});
+	
+	$('.ui-icon').hover(function() {
+		$(this).addClass("ui-state-hover");
+	}, 
+	function() {
+		$(this).removeClass("ui-state-hover");		
 	});
 });
