@@ -12,6 +12,7 @@
 			<th>Gender</th>
 			<th>City</th>
 			<th>Neighborhood</th>
+			<th>Joined</th>
 			<th>&nbsp;</th>
 		</tr>
 		<% @users.each_with_index do |user, i| %>
@@ -23,6 +24,7 @@
 				<td><%= user.gender.humanize %></td>
 				<td><%= user.city.andand.name %></td>
 				<td><%= user.neighborhood.andand.name %></td>
+				<td><%= user.created_at.andand.simple %></td>
 				<td><span id="userDetail<%= user.id %>" class="ui-icon ui-icon-search handIcon userDetail"></span></td>
 			</tr>
 		<% end %>

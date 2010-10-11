@@ -1,5 +1,5 @@
 /* General */
-BODY               { background-color: #555; }
+BODY               { background-color: #555; font-family: "Lucida Grande"; }
 TABLE              { border-collapse : collapse; }
 TABLE TD, TABLE TH { padding : 0; }
 .orangish          { color: #D46300; }
@@ -18,7 +18,7 @@ TABLE TD, TABLE TH { padding : 0; }
 .adminLayout            { width: 900px; margin: auto; border: 1px solid black; background-color: white; }
 .adminLayout TD         { padding: 0px; margin: 0px; }
 .adminLayout .header    { background-color: #008685; height: 75px; }
-.adminLayout .tagline   { color: #FA0000; font-size: 50px; font-weight: bold; top: 18px; left: 460px; position: absolute; }
+.adminLayout .tagline   { color: #FA0000; font-size: 50px; font-weight: bold; top: 15px; left: 460px; position: absolute; }
 .adminLayout .logAndTag { position: relative; }
 .adminLayout .body      { padding: 0 15px 30px 15px; }
 
@@ -34,9 +34,10 @@ TABLE TD, TABLE TH { padding : 0; }
 .navlist a:hover { color: #000; }
 
 /* Tabular listings */
-.listing TH { background-color: #00A6A5; color: #D46300; font-weight: bolder; font-size: 22px; }
+.listing TH { background-color: #00A6A5; color: #D46300; font-weight: bolder; font-size: 14px; }
 .listing TD,
 .listing TH  { padding: 2px 7px 2px 7px; }
+.listing TD { font-size: 12px; }
 .listing .oddRow { background-color: #DDD; }
 
 /* User popup */
