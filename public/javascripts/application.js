@@ -10,4 +10,17 @@ function selectACity() {
 	window.location.href='/users/new?city_id=' + city
 }
 
+function hideShowEmailFocus(element, expectedValue) {
+	if(element.value.indexOf(expectedValue) != -1) {
+	 element.value = '';
+	}
+}
+
+function hideShowEmailBlur(element, expectedValue) {
+	if(element.value == '') { 
+		element.value = expectedValue; 
+	}	
+}
+
+
 

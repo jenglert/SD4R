@@ -84,5 +84,7 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .hostAnEvent .section { padding-left: 25px; }
 
 /* Landing page CSS */
-.landingPage .emailInput { float: right; margin-right: 20px; -moz-border-radius: 15px; border-radius: 15px; background-color: #D46300; padding: 15px;}
+.landingPage .emailInput { float: right; margin-right: 20px; -moz-border-radius: 15px; border-radius: 15px; 
+													 background-color: #D46300; padding: 15px; }
+.landingPage .emailInput .email { width: 135px; }													
 .landingPage .submit     { margin-top: 9px; width: 143px; padding: 0px; background: white; }

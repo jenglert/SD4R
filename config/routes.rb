@@ -48,6 +48,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :users
+
     
   map.root :controller => "homepage"
   

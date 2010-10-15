@@ -2,12 +2,12 @@
 	<%= @landing_page.content %>
 	<% if @landing_page.style == '1' %>
 		<div class="emailInput" id="emailInput">
-				<form>
-					<input type="text" name="email" class="text" />
+				<% form_for @user_lead, :url => '/user_lead' do |ul| %>
+					<%= ul.text_field :email, :class => 'text email', :onfocus => "hideShowEmailFocus(this, '--email--')", :onblur => "hideShowEmailBlur(this, '#{UserLead.default_email}')" %>
 					<div>
 						<input type="submit" value="Notify Me!" class="submit"/>
 					</div>
-				</form>
+				<% end %>
 		</div>
 	<% end %>
 	
