@@ -9,6 +9,16 @@
 		
 	</head>
 	<body>
+		<% if flash[:notice] %>
+			<div class="flashNotice">
+				<div class="orangish">Something Went Wrong</div>
+				<%= flash[:notice] %>
+			</div>
+			<script type="text/javascript">
+				$('.flashNotice').slideDown();
+			</script>
+		<% end %>
+		
 		<div class="mainLayout">
 			<div class="whiteBackgroundLayout">
 				<div class="siteLogo">

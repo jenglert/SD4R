@@ -3,6 +3,8 @@
 
 $(document).ready(function() {
 	$("input:submit,").button();
+	
+ 	setTimeout('hideFlashNotice()', 10000);
 })
 
 function selectACity() {
@@ -22,5 +24,10 @@ function hideShowEmailBlur(element, expectedValue) {
 	}	
 }
 
+function populateNeighborhoods(cityId, object_name) {
+	$('#neiborhoodDropdown').load('/helper/neighborhoods?city_id=' + cityId + '&object_name=' + object_name);
+}
 
-
+function hideFlashNotice() {
+	$('.flashNotice').slideUp();
+}

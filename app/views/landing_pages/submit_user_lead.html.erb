@@ -1,0 +1,9 @@
+<% if @user_lead.errors.empty? %>
+	window.location = '/user_leads/thank_you';
+<% else %>
+	var errors = "";
+	<% @user_lead.errors.each_full do |error| %>
+		errors = errors + "<%= error %>\n";
+	<% end %>
+	alert(errors);
+<% end %>

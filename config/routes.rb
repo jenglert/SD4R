@@ -48,12 +48,12 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :users
-
     
   map.root :controller => "homepage"
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  map.connect ':controller/:action'
   
   map.connect '*path', :controller => 'landing_pages', :action => 'index'
 end

@@ -1,0 +1,1 @@
+<%= select_tag "#{params[:object_name]}[neighborhood_id]", option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(params[:city_id] || 9), 'members', 'grouping', 'id', 'name') %>

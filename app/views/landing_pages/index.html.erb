@@ -2,10 +2,14 @@
 	<%= @landing_page.content %>
 	<% if @landing_page.style == '1' %>
 		<div class="emailInput" id="emailInput">
-				<% form_for @user_lead, :url => '/user_lead' do |ul| %>
+				<% form_for @user_lead, :url => '/landing_pages/submit_user_lead' do |ul| %>
 					<%= ul.text_field :email, :class => 'text email', :onfocus => "hideShowEmailFocus(this, '--email--')", :onblur => "hideShowEmailBlur(this, '#{UserLead.default_email}')" %>
 					<div>
-						<input type="submit" value="Notify Me!" class="submit"/>
+						<%= ul.select "city_id", options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name'), { }, { :onchange => "populateNeighborhoods($(this).val(), 'user_lead')" } %>
+					</div>
+					<div id="neiborhoodDropdown"></div>
+					<div>
+						<input type="submit" value="Notify Me!" class="submit" onclick="return submitUserLeadForm()"/>
 					</div>
 				<% end %>
 		</div>
@@ -13,3 +17,15 @@
 	
 	<div class="clearBoth"></div>
 </div>
+
+<script type="text/javascript">
+	function submitUserLeadForm() {
+		$.ajax({
+				dataType: 'script',
+				data: $('#new_user_lead').serialize(),
+				url: '/landing_pages/submit_user_lead'
+			});
+			
+			return false;
+	}
+</script>

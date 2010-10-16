@@ -8,12 +8,17 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :if => Proc.new { |user| user.email }
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, :if => Proc.new { |user| user.email }
   
+  validate :city_id_exists
   validate :neighborhood_id_exists
   
   belongs_to :city
   belongs_to :neighborhood
   
   has_many :user_notes
+  
+  def city_id_exists
+    errors.add_to_base "Please select a City" if City.find_all_by_id(city_id).size == 0
+  end
   
   def neighborhood_id_exists
     errors.add_to_base "Please select a Neighborhood" if Neighborhood.find_all_by_id(neighborhood_id).size == 0

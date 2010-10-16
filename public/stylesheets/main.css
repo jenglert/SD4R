@@ -1,5 +1,5 @@
 /* Basic rails styles */
-body              { background-color: #fff; color: #333; }
+body              { background-color: #fff; color: #333; padding: 0px; margin: 0px; }
 body              { font-family: "Lucida Grande"; font-size:   14px; line-height: 18px; background-color: #158384; }
 pre               { background-color: #eee; padding: 10px; font-size: 11px; }
 .fieldWithErrors  { border-color: red; display: inline; }
@@ -36,6 +36,10 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .share           { width: 110px; }
 .bottomNav       { text-align: center; font-size: 12px; padding-top: 15px; }
 
+/** Flash notices */
+.flashNotice     { height: 35px; width: 100%; background-color: white; margin: 0 0 10px 0; padding: 10px 0 15px 0; text-align: center; font-size: 20px; display: none; }
+.flashNotice .orangish { padding-bottom: 3px; font-size: 24px; font-variant: small-caps;}
+
 /** Homepage */
 .homepage { margin: auto; padding-left: 20px; width: 580px;}
 .homepage .question { padding: 6px 0 6px 0; }
@@ -49,7 +53,7 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .homepage SELECT         { font-size: 15px; }
 
 /** White background layout */
-.whiteBackgroundLayout { -moz-border-radius: 15px; border-radius: 15px; background-color: white; padding: 15px; width: 600px; margin: auto; }
+.whiteBackgroundLayout { -moz-border-radius: 15px; border-radius: 15px; background-color: white; padding: 15px; width: 600px; margin: auto; margin-top: 10px; }
 
 /** Registration */
 .registration .header { font-size: 16px; }
@@ -87,4 +91,5 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .landingPage .emailInput { float: right; margin-right: 20px; -moz-border-radius: 15px; border-radius: 15px; 
 													 background-color: #D46300; padding: 15px; }
 .landingPage .emailInput .email { width: 135px; }													
-.landingPage .submit     { margin-top: 9px; width: 143px; padding: 0px; background: white; }
+.landingPage .submit     { margin-top: 6px; width: 143px; padding: 0px; background: white; }
+.landingPage SELECT      { width: 145px; margin-top: 6px;}
