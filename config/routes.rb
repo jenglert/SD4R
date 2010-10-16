@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -44,7 +43,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'contact-us', :controller => 'static_pages', :action => 'contact_us'
   
   map.namespace :admin do |admin|
-    admin.resources :users, :events, :landing_pages
+    admin.resources :users, :events, :landing_pages, :blog_posts
   end
   
   map.resources :users

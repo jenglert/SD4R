@@ -18,8 +18,22 @@ class Admin::LandingPagesController < AdminController
     end
   end
   
+  def update
+    LandingPage.find(params[:id]).update_attributes(params[:landing_page])
+    redirect_to :action => 'show', :id => params[:id]
+    return
+  end
+  
   def show
     @landing_page = LandingPage.find(params[:id])
+    
+     @landing_pages = LandingPage.all
+  end
+  
+  def edit
+    @landing_page = LandingPage.find(params[:id])
+    
+    render :action => 'new'
   end
   
   def delete_json

@@ -1,8 +1,8 @@
 <div class="newLandingPage">
 	<h2>Create a New Landing Page</h2>
-	<% form_for @landing_page, :url => '/admin/landing_pages' do |f|  %>
+	<% form_for @landing_page, :url => '/admin/landing_pages' + (@landing_page.id ? "/#{@landing_page.id}" : '') do |f|  %>
 	 	<%= f.error_messages %>
-	
+		<%= f.hidden_field :id %>
 		<div class="section">
 			<strong>name:</strong>
 			<div><%= f.text_field :name %></div>

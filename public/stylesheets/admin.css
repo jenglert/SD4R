@@ -7,6 +7,10 @@ H3                 { padding: 0; margin: 0; }
 .handIcon          { cursor: pointer; }
 .displayNone       { display: none; }
 .submit            { margin-top: 10px; }
+.floatRight        { float: right; }
+.floatLeft         { float: left; }
+.clearBoth         { clear: both; }
+
 
 /* Errors */
 .fieldWithErrors INPUT, 
