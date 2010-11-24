@@ -1,20 +1,26 @@
-<h1>Editing blog_post</h1>
+<h1>Editing Blog Post</h1>
 
-<% form_for(@blog_post) do |f| %>
+<% form_for @blog_post, :url => '/admin/blog_posts' do |f| %>
   <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
 
   <p>
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </p>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
+
+	<p>
+		<%= f.label :live_date %><br />
+		<%= f.date_select :live_date %>
+	</p>
+
   <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @blog_post %> |
-<%= link_to 'Back', blog_posts_path %>
+<%= link_to 'Back', :action => 'index' %>

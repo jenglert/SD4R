@@ -5,3 +5,11 @@ class Time
   end
   
 end
+
+class Date
+  
+  def simple
+    strftime "%b %d, %Y"
+  end
+  
+end

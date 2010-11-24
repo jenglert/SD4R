@@ -87,9 +87,17 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 /* host an event */
 .hostAnEvent .section { padding-left: 25px; }
 
-/* Landing page CSS */
-.landingPage .emailInput { float: right; margin-right: 20px; -moz-border-radius: 15px; border-radius: 15px; 
+/* Email input widget */
+.emailInput { float: right; -moz-border-radius: 15px; border-radius: 15px; 
 													 background-color: #D46300; padding: 15px; }
-.landingPage .emailInput .email { width: 135px; }													
-.landingPage .submit     { margin-top: 6px; width: 143px; padding: 0px; background: white; }
-.landingPage SELECT      { width: 145px; margin-top: 6px;}
+.emailInput .email { width: 135px; }
+.submit     { margin-top: 6px; width: 143px; padding: 0px; background: white; }
+.emailInput SELECT      { width: 145px; margin-top: 6px; }
+
+/* Blog page CSS */
+.blogs .blog      { border: 1px solid #D46300; margin-bottom: 10px; padding: 4px; width: 400px; }
+.blogs .blog A    { font-size: 23px; }
+
+.blogShow         { padding-bottom: 35px; }
+.blogShow H2      { margin-bottom: 0px; }
+.blogShow .postedOn { padding-bottom: 10px; font-size: 12px; display: block;}

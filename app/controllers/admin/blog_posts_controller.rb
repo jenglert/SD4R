@@ -9,7 +9,7 @@ class Admin::BlogPostsController < AdminController
   end
 
   def new
-    @blog_post = BlogPost.new
+    @blog_post = BlogPost.new(:live_date => 1.day.from_now)
   end
 
   def edit

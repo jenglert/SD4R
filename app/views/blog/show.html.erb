@@ -1,0 +1,11 @@
+<% @page_title = @blog.title %>
+<%= render :partial => '/partials/email_city_capture' %>
+<div class="blogShow">
+	<h2 class="taglineSmall"><%= @blog.title %></h2>
+	<span class="postedOn"><%= @blog.live_date.andand.simple || @blog.created_at.simple %></span>
+	<div class="content">
+		<%= @blog.content %>
+	</div>
+</div>
+
+<%= link_to "<< All Blogs", :action => "index" %>

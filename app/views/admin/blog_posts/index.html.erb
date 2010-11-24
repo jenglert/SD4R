@@ -3,12 +3,19 @@
 <table class="listing">
   <tr>
     <th>Title</th>
+		<th>Live Date</th>
+		<th>Contents</th>
     <th>&nbsp;</th>
   </tr>
 
 <% @blog_posts.each do |blog_post| %>
   	<td><%= link_to blog_post.title, :action => 'show', :id => blog_post %></td>
-    <td><%= link_to '<span class="ui-icon ui-icon-wrench floatLeft">', :acion => 'edit', :id => blog_post %></td>
+		<td><%= blog_post.live_date.andand.simple %></td>
+		<td><%= blog_post.words_in_content %></td>
+    <td>
+			<%= link_to '<span class="ui-icon ui-icon-wrench floatLeft" />', :action => 'edit', :id => blog_post %>
+			<%= link_to '<span class="ui-icon ui-icon-document floatLeft" />', :controller => '/blog', :action => 'show', :id => blog_post%>
+		</td>
   </tr>
 <% end %>
 </table>

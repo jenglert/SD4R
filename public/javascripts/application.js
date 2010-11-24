@@ -31,3 +31,13 @@ function populateNeighborhoods(cityId, object_name) {
 function hideFlashNotice() {
 	$('.flashNotice').slideUp();
 }
+
+function submitUserLeadForm() {
+	$.ajax({
+			dataType: 'script',
+			data: $('#new_user_lead').serialize(),
+			url: '/landing_pages/submit_user_lead'
+		});
+		
+		return false;
+}

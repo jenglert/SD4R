@@ -4,13 +4,20 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </p>
-  <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+
+	<p>
+		<%= f.label :live_date %><br />
+		<%= f.date_select :live_date %>
+	</p>
+	
   <p>
     <%= f.submit 'Create' %>
   </p>
