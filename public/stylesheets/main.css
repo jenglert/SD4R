@@ -25,6 +25,7 @@ a:hovor { color: #D46300; text-decoration: none; }
 H2.title        { font-size: 28px; position: absolute; top: 0px; left: 0px; z-index: 100; } 
 H2.titleBack    { font-size: 28px; color: #D46300; position: absolute; top: 1px; left: 1px; }
 H3              { color: #D46300; padding-left: 3px; }
+A IMG           { outline: none; border: none;}
 
 /** layout */
 .siteLogo        { margin: auto; color: white; width: 400px; padding-right: 230px; }

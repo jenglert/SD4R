@@ -1,3 +1,6 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="<%= url_for :only_path => false, :controller => 'blog', :action => 'rss'%>" />
+<% end %>
 <div class="blogs">
 	<% @page_title = "The Official VRoomMates Blog" %>
 	
@@ -13,4 +16,6 @@
 			</div>
 		</div>
 	<% end %>
+	
+	<%= link_to image_tag('rss.png', :height => 25, :width => 25), :action => 'rss' %>
 </div>
