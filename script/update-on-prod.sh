@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh jamesro@thepeoplesfeed.com 'cd vroommates && git pull && touch tmp/restart.txt'
+ssh jamesro@thepeoplesfeed.com 'cd vroommates && git pull && rake db:migrate && touch tmp/restart.txt'
