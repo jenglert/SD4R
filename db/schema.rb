@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101123185412) do
+ActiveRecord::Schema.define(:version => 20101126023434) do
 
   create_table "blog_posts", :force => true do |t|
     t.text     "content"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20101123185412) do
     t.string   "name"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", :force => true do |t|
+    t.integer  "neighborhood_id"
+    t.time     "event_date"
+    t.integer  "host_id"
+    t.integer  "status"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

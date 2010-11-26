@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   belongs_to :neighborhood
   
   has_many :user_notes
+  has_many :event_signups
+  has_many :events, :through => :event_signups
   
   def city_id_exists
     errors.add_to_base "Please select a City" if City.find_all_by_id(city_id).size == 0

@@ -28,3 +28,7 @@ $(function () {
 		$(this).removeClass("ui-state-hover");		
 	});
 });
+
+function populateNeighborhoods(cityId, object_name) {
+	$('#neiborhoodDropdown').load('/helper/neighborhoods?city_id=' + cityId + '&object_name=' + object_name + '&show_title=true');
+}

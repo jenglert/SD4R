@@ -39,10 +39,6 @@ You’ll only be mingling with those you might want to share a home with. So beh
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 	
 				<%= select_tag "city", options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name'), :onChange => "selectACity()" %>
-					
-			
-				
-			
 			
 			</h3>	
 		</p>

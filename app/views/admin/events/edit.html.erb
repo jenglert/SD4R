@@ -1,0 +1,20 @@
+<% @page_title = @event.id ? 'Create' : 'New' + ' an Event' %>
+<div class="editEvent">
+	<h2><%= @event.id ? 'Edit' : 'New' %> Event</h2>
+	<% form_for @event, :url => '/admin/events/create' do |e| %>
+		<p>
+			Title: <%= e.text_field :title %>
+		</p>
+		<p>
+			City: <%= select_tag 'city', options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name'), :onchange => "populateNeighborhoods($(this).val(), 'event')" %>
+		</p>
+		<p id="neiborhoodDropdown"></p>
+		<p>
+		<p>
+			Event Date:<%= e.datetime_select :event_date %>
+		</p>
+		
+		<%= submit_tag 'Create' %>
+	
+	<% end %>
+</div>

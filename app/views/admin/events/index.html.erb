@@ -1,6 +1,27 @@
 <div class="eventsAdmin">
 	<h2>Events</h2>
 	<div>
-		No events scheduled
+		<% if @events || @events.size == 0 %>
+			No Events Scheduled
+		<% else %>
+			<table class="listing">
+				<tr>
+					<th>Id</th>
+					<th>Title</th>
+					<th>Neighborhood</th>
+					<th>Date</th>
+				</tr>
+				<% @events.each_with_index do |event, i| %>
+					<tr>
+						<td><%= event.id %></td>
+						<td><%= event.title %></td>
+						<td><%= event.neighborhood %></td>
+						<td><%= event.event_date %></td>
+					</tr>
+				<% end %>
+			</table>
+		<% end %>
 	</div>
+	<br />
+	<%= link_to 'Create an Event', :action => 'new' %>
 </div>

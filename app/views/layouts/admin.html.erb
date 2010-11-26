@@ -6,7 +6,7 @@
 		<script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="/javascripts/jquery-ui-1.8.4.custom.min.js"></script>
 		<script type="text/javascript" src="/javascripts/admin.js"></script>
-		<title>VroomMates Admin</title>
+		<title><%= @page_title ? @page_title + "-" : '' %> VroomMates Admin</title>
 	</head>
 	<body>
 		<table class="adminLayout">
@@ -27,6 +27,7 @@
 						<li><%= link_to 'events', :controller => 'admin/events', :action => 'index' %></li>
 						<li><%= link_to 'landing pages', :controller => 'admin/landing_pages', :action => 'index' %></li>
 						<li><%= link_to 'blog', :controller => 'admin/blog_posts', :action => 'index' %></li>
+						<li><%= link_to 'events', :controller => 'admin/events', :action => 'index' %></li>
 					</ul>
 				</td>
 			</tr>

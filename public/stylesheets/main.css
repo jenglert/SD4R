@@ -91,9 +91,10 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 /* Email input widget */
 .emailInput { float: right; -moz-border-radius: 15px; border-radius: 15px; 
 													 background-color: #D46300; padding: 15px; }
-.emailInput .email { width: 135px; }
-.submit     { margin-top: 6px; width: 143px; padding: 0px; background: white; }
+.emailInput .email      { width: 135px; }
+.submit                 { margin-top: 6px; width: 143px; padding: 0px; background: white; }
 .emailInput SELECT      { width: 145px; margin-top: 6px; }
+.emailCityCaptureTitle  { padding-bottom: 8px; font-weight: bold; text-align: center; }
 
 /* Blog page CSS */
 .blogs .blog      { border: 1px solid #D46300; margin-bottom: 10px; padding: 4px; width: 400px; }
