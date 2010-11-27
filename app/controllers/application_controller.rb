@@ -8,6 +8,16 @@ class ApplicationController < ActionController::Base
   layout 'standard'
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
   
+  def set_logged_in(user) 
+    cookies[:logged_in] = user.id
+  end
+  
+  def current_user
+    user_id = cookies[:logged_in]
+    
+    User.find(user_id)
+  end
+  helper_method :current_user
 end

@@ -6,7 +6,7 @@ class LandingPagesController < ApplicationController
     @user_lead = UserLead.new(:email => UserLead.default_email)
     
     if !@landing_page
-      flash[:notice] = "Unable to find the page you have specified.  Please double check the URL."
+      flash[:error] = "Unable to find the page you have specified.  Please double check the URL."
       redirect_to '/' 
     end
   end

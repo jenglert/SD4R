@@ -54,5 +54,5 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
   map.connect ':controller/:action'
   
-  map.connect '*path', :controller => 'landing_pages', :action => 'index'
+  #map.connect '*path', :controller => 'landing_pages', :action => 'index'
 end

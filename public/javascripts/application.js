@@ -1,5 +1,9 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+// Adds the ability to determine if an element of the DOM is active.
+jQuery.extend(jQuery.expr[':'], {
+	focus: function(element) {
+		return element == document.activeElement;
+	}
+});
 
 $(document).ready(function() {
 	$("input:submit,").button();
@@ -40,4 +44,17 @@ function submitUserLeadForm() {
 		});
 		
 		return false;
+}
+
+function hideShowLoginOverlay(type) {
+	var input = $('.siteLogo .' + type);
+	if(input.is(':focus')) {
+		if((input.val() == '-' + type + '-') || (input.val() == '')) {
+			input.val('');
+		}
+	} else {
+		if((input.val() == '-' + type + '-') || (input.val() == '')) {
+			input.val('-' + type + '-');
+		}
+	}
 }
