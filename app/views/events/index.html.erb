@@ -1,0 +1,26 @@
+<% @page_title = "Events" %>
+<div class="eventsIndex">
+	<h2><%= @title %></h2>
+	
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Date</th>
+			<th>City</th>
+			<th>Neighborhood</th>
+			<th>&nbsp;</th>
+		<tr>
+		<% @events.each do |event| %>
+			<tr>
+				<td><%= link_to event.title, :action => 'show', :id => event.id %></td>
+				<td><%= event.event_date.simple_with_time %></td>
+				<td><%= event.neighborhood.city.name %></td>
+				<td><%= event.neighborhood.name %></td>
+				<td>
+					<%= link_to 'Signup!', :controller => 'events', :action => 'signup', :id => event.id %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+	
+</div>

@@ -11,13 +11,21 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   
   def set_logged_in(user) 
-    cookies[:logged_in] = user.id
+    cookies[:logged_in] = { :value => user.id, :expires => 360.days.from_now}
   end
   
   def current_user
     user_id = cookies[:logged_in]
     
-    User.find(user_id)
+    return User.find(user_id) if user_id
+    
+  rescue ActiveRecord::RecordNotFound
+    return nil
   end
   helper_method :current_user
+  
+  def logout_user
+    cookies[:logged_in] = nil
+  end
+  helper_method :logout_user
 end

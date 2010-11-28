@@ -1,22 +1,24 @@
 <div class="eventsAdmin">
 	<h2>Events</h2>
 	<div>
-		<% if @events || @events.size == 0 %>
+		<% if @events && @events.size == 0 %>
 			No Events Scheduled
 		<% else %>
 			<table class="listing">
 				<tr>
 					<th>Id</th>
 					<th>Title</th>
+					<th>City</th>
 					<th>Neighborhood</th>
 					<th>Date</th>
 				</tr>
 				<% @events.each_with_index do |event, i| %>
-					<tr>
-						<td><%= event.id %></td>
-						<td><%= event.title %></td>
-						<td><%= event.neighborhood %></td>
-						<td><%= event.event_date %></td>
+					<tr class="<%= i % 2 == 1 ? 'oddRow' : '' %>">
+						<td><%= link_to event.id, :action => 'edit', :id => event.id %></td>
+						<td><%= event.title %></td> 
+						<td><%= event.neighborhood.city.name %></td>
+						<td><%= event.neighborhood.name %></td>
+						<td><%= event.event_date.simple_with_time %></td>
 					</tr>
 				<% end %>
 			</table>

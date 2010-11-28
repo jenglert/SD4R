@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101126023434) do
+ActiveRecord::Schema.define(:version => 20101128011904) do
 
   create_table "blog_posts", :force => true do |t|
     t.text     "content"
@@ -27,15 +27,16 @@ ActiveRecord::Schema.define(:version => 20101126023434) do
     t.datetime "updated_at"
   end
 
-  create_table "events", :force => true do |t|
-    t.integer  "neighborhood_id"
-    t.time     "event_date"
-    t.integer  "host_id"
-    t.integer  "status"
-    t.string   "title"
+  create_table "event_signups", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+# Could not dump table "events" because of following StandardError
+#   Unknown type 'sting' for column 'host_name'
 
   create_table "landing_pages", :force => true do |t|
     t.string   "name"

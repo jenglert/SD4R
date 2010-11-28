@@ -39,7 +39,11 @@
 							<% end %>
 						</div>
 					<% else %>
-					
+						<div class="welcomeUser">
+							Welcome <%= current_user.first_name %>
+							<br />
+							<%= link_to 'logout', :controller => 'login', :action => 'logout' %>
+						</div>
 					<% end %>
 					
 					<div class="clearBoth" ></div>

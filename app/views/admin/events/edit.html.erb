@@ -2,19 +2,32 @@
 <div class="editEvent">
 	<h2><%= @event.id ? 'Edit' : 'New' %> Event</h2>
 	<% form_for @event, :url => '/admin/events/create' do |e| %>
+		<%= e.error_messages %>
 		<p>
 			Title: <%= e.text_field :title %>
 		</p>
 		<p>
-			City: <%= select_tag 'city', options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name'), :onchange => "populateNeighborhoods($(this).val(), 'event')" %>
+			City: <%= select_tag 'city', options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name', @event.neighborhood.city_id), :onchange => "populateNeighborhoods($(this).val(), 'event')" %>
 		</p>
 		<p id="neiborhoodDropdown"></p>
+			<% if @event.neighborhood_id %>
+				Neighborhood: <%= e.select :neighborhood_id, option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(@event.neighborhood.city_id || 9), 'members', 'grouping', 'id', 'name', @event.neighborhood_id)%>
+			<% end %>
 		<p>
 		<p>
-			Event Date:<%= e.datetime_select :event_date %>
+			Event Date: <%= e.datetime_select :event_date %>
+		</p>
+		<p>
+			Event Location: <%= e.text_area :location, :rows => 4 %>
+		</p>		
+		<p>
+			Host Name: <%= e.text_field :host_name, :size => 20 %> email: <%= e.text_field :host_email, :size => 20 %> phone: <%= e.text_field :host_phone, :size => 15 %>
+		</p>
+		<p>
+			Notes: <%= e.text_area :notes, :rows => 4 %>
 		</p>
 		
-		<%= submit_tag 'Create' %>
+		<%= submit_tag 'Create Event' %>
 	
 	<% end %>
 </div>

@@ -1,10 +1,12 @@
 <% @page_title = "Event" %>
 <div class="eventShow">
 	<h2><%= @event.title %></h2>
-	<table>
-		<tr>
-			<th>Event Date</th>
-			<td><%= @event.event_date %></td>
-		</tr>
-	</table>
+	<p>
+		<em>Event Date :</em>
+		<%= @event.event_date.simple_with_time %>
+	</p>
+	
+	<br />
+	<br />
+	<%= link_to "All Events", :action => 'index'%>
 </div>
