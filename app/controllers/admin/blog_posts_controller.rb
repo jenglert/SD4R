@@ -21,32 +21,24 @@ class Admin::BlogPostsController < AdminController
 
     if @blog_post.save
       flash[:notice] = 'BlogPost was successfully created.'
-      redirect_to :action => 'show', :id => @blog_post 
+      redirect_to :action => 'index'
     else
       render :action => "new"
     end
 
   end
-
-  # PUT /blog_posts/1
-  # PUT /blog_posts/1.xml
+  
   def update
     @blog_post = BlogPost.find(params[:id])
 
-    respond_to do |format|
-      if @blog_post.update_attributes(params[:blog_post])
-        flash[:notice] = 'BlogPost was successfully updated.'
-        format.html { redirect_to(@blog_post) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @blog_post.errors, :status => :unprocessable_entity }
-      end
+    if @blog_post.update_attributes(params[:blog_post])
+      flash[:notice] = 'BlogPost was successfully updated.'
+      redirect_to :action => 'index' 
+    else
+      render :action => "edit" 
     end
   end
 
-  # DELETE /blog_posts/1
-  # DELETE /blog_posts/1.xml
   def destroy
     @blog_post = BlogPost.find(params[:id])
     @blog_post.destroy

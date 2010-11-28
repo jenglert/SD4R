@@ -1,6 +1,6 @@
 <h1>Editing Blog Post</h1>
 
-<% form_for @blog_post, :url => '/admin/blog_posts' do |f| %>
+<% form_for @blog_post, :url => '/admin/blog_posts' + (@blog_post.id ? "/" + @blog_post.id.to_s : '') do |f| %>
   <%= f.error_messages %>
 
   <p>
