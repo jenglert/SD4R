@@ -5,4 +5,8 @@ class HomepageController < ApplicationController
     
   end
   
+  def v2
+    render :layout => 'standard2'
+  end
+  
 end

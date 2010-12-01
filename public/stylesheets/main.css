@@ -38,6 +38,24 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 .share           { width: 110px; }
 .bottomNav       { text-align: center; font-size: 12px; padding-top: 15px; }
 
+/* New Layout */
+BODY.newLayout   { background:#f4a810 url('/images/layout_v2/orange_background.jpg') repeat-y center top; width: 100%; height: 100%;}
+.newLayout .mainContent { width: 1000px; height: 600px; margin: auto; position: relative; }
+.newLayout .mainContent .picture { border: 1px solid white; }
+.newLayout .mainContent .picture1 { position: absolute; left: 0px; top: 57px; }
+.newLayout .mainContent .picture2 { position: absolute; left: 249px; top: 57px; }
+.newLayout .mainContent .picture3 { position: absolute; left: 374px; top: 57px; }
+.newLayout .mainContent .picture4 { position: absolute; left: 0px; top: 256px; }
+.newLayout .mainContent .picture5 { position: absolute; left: 249px; top: 239px; }
+.newLayout .mainContent .picture6 { position: absolute; left: 374px; top: 308px; }
+.newLayout .mainContent .picture7 { position: absolute; left: 0px; top: 445px; }
+.newLayout .mainContent .picture8 { position: absolute; left: 183px; top: 445px; }
+.newLayout .mainContent .picture9 { position: absolute; left: 894px; top: 58px; }
+.newLayout .mainContent .picture10 { position: absolute; left: 784px; top: 215px; }
+.newLayout .mainContent .picture11 { position: absolute; left: 806px; top: 444px; }
+
+.newLayout .mainContent .whiteBackground { z-index: 999; position: absolute; left: 376px; }
+
 /* Login elements */
 .siteLogo .login       { display: inline; width: 195px; height: 50px; float: right; padding-top: 4px; position: relative; }
 .siteLogo .login .email { margin-bottom: 5px; }

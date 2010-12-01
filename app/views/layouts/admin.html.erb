@@ -9,6 +9,18 @@
 		<title><%= @page_title ? @page_title + "-" : '' %> VroomMates Admin</title>
 	</head>
 	<body>
+		<% if flash[:notice] || flash[:error] %>
+			<div class="flashNotice">
+				<% if flash[:error] %>
+					<div class="orangish">Something Went Wrong</div>
+				<% end %>
+				<%= flash[:notice] %>
+				<%= flash[:error] %>
+			</div>
+			<script type="text/javascript">
+				$('.flashNotice').slideDown();
+			</script>
+		<% end %>
 		<table class="adminLayout">
 			<tr>
 				<td class="header">
