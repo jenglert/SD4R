@@ -24,20 +24,30 @@
 			</script>
 		<% end %>
 		
+		<div class="login">
+			<img src="/images/layout_v2/mini_logo.png" class="miniLogo" />
+			<input type="text" class="username" />
+			<input type="text" class="password" />
+			<img src="/images/layout_v2/go.png" class="go"/>
+		</div>
+		
 		<div class="mainContent">
-			<img class="picture1 picture" src="/images/layout_v2/picture1.jpg" />
-			<img class="picture2 picture" src="/images/layout_v2/picture2.jpg" />
-			<img class="picture3 picture" src="/images/layout_v2/picture3.jpg" />
-			<img class="picture4 picture" src="/images/layout_v2/picture4.jpg" />
-			<img class="picture5 picture" src="/images/layout_v2/picture5.jpg" />
-			<img class="picture6 picture" src="/images/layout_v2/picture6.jpg" />
-			<img class="picture7 picture" src="/images/layout_v2/picture7.jpg" />
-			<img class="picture8 picture" src="/images/layout_v2/picture8.jpg" />
-			<img class="picture9 picture" src="/images/layout_v2/picture9.jpg" />
-			<img class="picture10 picture" src="/images/layout_v2/picture10.jpg" />
-			<img class="picture11 picture" src="/images/layout_v2/picture11.jpg" />
 			
-			<img class="whiteBackground" src="/images/layout_v2/main_white_background.png" />
+			<div class="whiteBackground" >
+				<div class="heightEnforcer" ></div>
+				<div class="navigation">
+					<%= link_to 'Home', :controller => 'homepage', :action => 'v2' %>
+					<%= link_to 'About our Events', '/about-our-events' %>
+					<%= link_to 'Sign Up', :controller => 'users', :action => 'new'%>
+				</div>
+				<%= yield %>
+				<div class="clearBoth"></div>
+				<div class="footer">
+					<%= link_to 'Sponsor an Event', '/sponsor-an-event' %>
+					<%= link_to 'Run an Event', '/run-an-event' %>
+					<%= link_to 'Legal / Privacy', '/legal' %>
+				</div>
+			</div>
 		</div>
 		
 		<script type="text/javascript">

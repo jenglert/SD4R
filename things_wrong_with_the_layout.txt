@@ -1,0 +1,3 @@
+Tips for making web ready layouts.
+
+-The colors on each side of the gradient are slightly off.  When implementing this in HTML, we need to center the gradient image and then have a single background color.  Having two different colors on each side of the gradient makes this very hard.
