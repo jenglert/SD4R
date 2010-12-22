@@ -10,7 +10,7 @@
 		<%= yield :head %>
 		
 	</head>
-	<body class="newLayout">
+	<body class="newLayout" style="height: 100%">
 		<% if flash[:notice] || flash[:error] %>
 			<div class="flashNotice">
 				<% if flash[:error] %>
@@ -26,12 +26,27 @@
 		
 		<div class="login">
 			<img src="/images/layout_v2/mini_logo.png" class="miniLogo" />
-			<input type="text" class="username" />
-			<input type="text" class="password" />
-			<img src="/images/layout_v2/go.png" class="go"/>
+			<% if !current_user %>
+				<div class="login">
+					<% form_for User.new, :url => "/login/login" do |u| %>
+						<div class="emailOverlay">Email</div>
+						<%= u.text_field :email, :class => 'email', :onclick => 'hideShowLoginOverlay("email")', :onkeyup => 'hideShowLoginOverlay("email")', :onkeydown => 'hideShowLoginOverlay("email")', :onblur => 'hideShowLoginOverlay("email")' %>
+						<br />
+						<div class="passwordOverlay">Password</div>
+						<%= u.password_field :password, :class => 'password', :onclick => 'hideShowLoginOverlay("password")', :onkeyup => 'hideShowLoginOverlay("password")', :onkeydown => 'hideShowLoginOverlay("password")', :onblur => 'hideShowLoginOverlay("password")' %>
+						<%= image_submit_tag 'layout_v2/go.png', :class => 'loginSubmit go'%>
+					<% end %>
+				</div>
+			<% else %>
+				<div class="welcomeUser">
+					Welcome <%= current_user.first_name %>
+					<br />
+					<%= link_to 'logout', :controller => 'login', :action => 'logout' %>
+				</div>
+			<% end %>
 		</div>
 		
-		<div class="mainContent">
+		<div class="mainContent" style="height: 100%">
 			
 			<div class="whiteBackground" >
 				<div class="heightEnforcer" ></div>
@@ -47,6 +62,7 @@
 					<%= link_to 'Run an Event', '/run-an-event' %>
 					<%= link_to 'Legal / Privacy', '/legal' %>
 				</div>
+				
 			</div>
 		</div>
 		

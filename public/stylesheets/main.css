@@ -41,14 +41,15 @@ H2.tagline       { font-size: 15px; margin-top: -30px; font-weight: normal; marg
 /* New Layout */
 BODY.newLayout   { background:#f4ac1a url('/images/layout_v2/background.jpg') no-repeat fixed 50px 0px; width: 100%; height: 100%; font-family: tahoma;}
 
-.newLayout .login       { width: 360px; height: 40px; left: 30px; top: 4px; position: absolute; }
-.newLayout .login INPUT { width: 90px; margin-bottom: 10px; }
+.newLayout .login       { width: 360px; height: 40px; left: 30px; top: 4px; position: fixed; }
 .newLayout .login .miniLogo { position: absolute; top: 4px; left: 20px; }
-.newLayout .login .username { position: absolute; top: 10px; left: 60px; } 
-.newLayout .login .password { position: absolute; top: 10px; left: 165px; }
+.newLayout .login .emailOverlay { position: absolute; top: 12px; left: 66px; color: #42b0e5; z-index: 999; }
+.newLayout .login .email { position: absolute; top: 10px; left: 60px; width: 90px;} 
+.newLayout .login .passwordOverlay { position: absolute; top: 12px; left: 171px; color: #42b0e5; z-index: 999; }
+.newLayout .login .password { position: absolute; top: 10px; left: 165px; width: 90px;}
 .newLayout .login .go       { position: absolute; top: 12px; left: 275px; }
 
-.newLayout .mainContent .whiteBackground { z-index: 999; position: absolute; left: 434px; width: 477px; padding: 0 65px;
+.newLayout .mainContent .whiteBackground { z-index: 999; position: absolute; left: 434px; width: 477px; padding: 0 65px; height: 100%;
 	 																				 background: transparent url('/images/layout_v2/main_white_background.png') repeat-y left top; }
 .newLayout .mainContent .heightEnforcer { float: right; height: 538px;}
 .newLayout .mainContent .navigation   { height: 60px; text-align: center; padding-top: 20px; }
