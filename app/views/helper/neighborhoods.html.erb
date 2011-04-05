@@ -1,4 +1,4 @@
-<% if params[:object_name] %>
+<% if params[:object_name] and params[:show_label] == 'true' %>
 	<%= params[:object_name].humanize %>:
 <% end %>
-<%= select_tag "#{params[:object_name]}[neighborhood_id]", option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(params[:city_id] || 9), 'members', 'grouping', 'id', 'name') %>
+<%= select_tag "#{params[:object_name] ? params[:object_name] + "[neighborhood_id]" : "neightborhood_id"}", option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(params[:city_id] || 9), 'members', 'grouping', 'id', 'name') %>

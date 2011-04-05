@@ -1,5 +1,4 @@
 <div class="homepageV2">
-	<img src="/images/layout_v2/logo.png" class="logo"/>
 	<div class="information">
 		<div class="header">
 			Speed Dating for Roommates
@@ -7,10 +6,11 @@
 		<div class="more">
 			Welcome to VroomMates.com!  
 			We offer unique events
-			that can help you find someone decent to live with.
-			We do our best to make sure you never get another bad roommate!
+			that will greatly enhance your chances of finding a decent roommate.
+			We use computer algorithms based off a quick survey to match you
+			with like minded people who you are sure to get along with.
 		</div>
 	</div>
-	<img src="/images/layout_v2/click_to_register.png" class="clickToRegister" />
+	<%= link_to image_tag('layout_v2/click_to_register.png', :class => 'clickToRegister'), :controller => 'users', :action => 'new' %>
 
 </div>

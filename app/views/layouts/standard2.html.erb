@@ -11,32 +11,20 @@
 		
 	</head>
 	<body class="newLayout" style="height: 100%">
-		<% if flash[:notice] || flash[:error] %>
-			<div class="flashNotice">
-				<% if flash[:error] %>
-					<div class="orangish">Something Went Wrong</div>
-				<% end %>
-				<%= flash[:notice] %>
-				<%= flash[:error] %>
-			</div>
-			<script type="text/javascript">
-				$('.flashNotice').slideDown();
-			</script>
-		<% end %>
-		
 		<div class="login">
 			<img src="/images/layout_v2/mini_logo.png" class="miniLogo" />
 			<% if !current_user %>
 				<div class="login">
 					<% form_for User.new, :url => "/login/login" do |u| %>
-						<div class="emailOverlay">Email</div>
-						<%= u.text_field :email, :class => 'email', :onclick => 'hideShowLoginOverlay("email")', :onkeyup => 'hideShowLoginOverlay("email")', :onkeydown => 'hideShowLoginOverlay("email")', :onblur => 'hideShowLoginOverlay("email")' %>
+						<%= u.text_field :email, :class => 'email', :title => 'email' %>
 						<br />
-						<div class="passwordOverlay">Password</div>
-						<%= u.password_field :password, :class => 'password', :onclick => 'hideShowLoginOverlay("password")', :onkeyup => 'hideShowLoginOverlay("password")', :onkeydown => 'hideShowLoginOverlay("password")', :onblur => 'hideShowLoginOverlay("password")' %>
+						<%= u.password_field :password, :class => 'password', :title => "password" %>
 						<%= image_submit_tag 'layout_v2/go.png', :class => 'loginSubmit go'%>
 					<% end %>
 				</div>
+				<script type="text/javascript">
+					$(".login").inputHintOverlay(3, 10);
+				</script>
 			<% else %>
 				<div class="welcomeUser">
 					Welcome <%= current_user.first_name %>
@@ -46,23 +34,36 @@
 			<% end %>
 		</div>
 		
-		<div class="mainContent" style="height: 100%">
-			
-			<div class="whiteBackground" >
-				<div class="heightEnforcer" ></div>
-				<div class="navigation">
-					<%= link_to 'Home', :controller => 'homepage', :action => 'v2' %>
-					<%= link_to 'About our Events', '/about-our-events' %>
-					<%= link_to 'Sign Up', :controller => 'users', :action => 'new'%>
+		<div class="whiteBackground" >
+		</div>
+		
+		<div class="mainContent">
+			<% if flash[:notice] || flash[:error] %>
+				<div class="flashNotice" onclick="javascript:hideFlashNotice()">
+					<% if flash[:error] %>
+						<div class="orangish">Something Went Wrong</div>
+					<% end %>
+					<%= flash[:notice] %>
+					<%= flash[:error] %>
 				</div>
+				<script type="text/javascript">
+					$('.flashNotice').slideDown();
+				</script>
+			<% end %>
+			<div class="navigation">
+				<%= link_to 'Home', :controller => 'homepage', :action => 'v2' %>
+				<%= link_to 'About our Events', '/about-our-events' %>
+				<%= link_to 'Sign Up', :controller => 'users', :action => 'new'%>
+			</div>
+			<img src="/images/layout_v2/logo.png" class="logo"/>
+			<div class="pageYield">
 				<%= yield %>
-				<div class="clearBoth"></div>
-				<div class="footer">
-					<%= link_to 'Sponsor an Event', '/sponsor-an-event' %>
-					<%= link_to 'Run an Event', '/run-an-event' %>
-					<%= link_to 'Legal / Privacy', '/legal' %>
-				</div>
-				
+			</div>
+			<div class="clearBoth"></div>
+			<div class="footer">
+				<%= link_to 'Sponsor an Event', '/sponsor-an-event' %>
+				<%= link_to 'Run an Event', '/run-an-event' %>
+				<%= link_to 'Legal / Privacy', '/legal' %>
 			</div>
 		</div>
 		

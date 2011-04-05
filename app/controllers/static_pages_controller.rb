@@ -10,4 +10,11 @@ class StaticPagesController < ApplicationController
   def contact_us
     
   end
+  
+  def about_our_events
+  end
+  
+  def legal
+    
+  end
 end

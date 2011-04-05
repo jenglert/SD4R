@@ -7,7 +7,7 @@
 	<% form_for UserLead.new(:email => UserLead.default_email), :url => '/landing_pages/submit_user_lead' do |ul| %>
 		<%= ul.text_field :email, :class => 'text email', :onfocus => "hideShowEmailFocus(this, '--email--')", :onblur => "hideShowEmailBlur(this, '#{UserLead.default_email}')" %>
 		<div>
-			<%= ul.select "city_id", options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name'), { }, { :onchange => "populateNeighborhoods($(this).val(), 'user_lead')" } %>
+			<%= ul.select "city_id", options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name'), { }, { :onchange => "populateNeighborhoods($(this).val(), 'user_lead', false)" } %>
 		</div>
 		<div id="neiborhoodDropdown"></div>
 		<div>

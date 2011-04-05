@@ -41,6 +41,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'host-an-event', :controller => 'static_pages', :action => 'host_an_event'
   map.connect 'privacy-policy', :controller => 'static_pages', :action => 'privacy_policy'
   map.connect 'contact-us', :controller => 'static_pages', :action => 'contact_us'
+  map.connect 'about-our-events', :controller => 'static_pages', :action => 'about_our_events'
+  map.connect 'legal', :controller => 'static_pages', :action => 'legal'
   
   map.namespace :admin do |admin|
     admin.resources :users, :events, :landing_pages, :blog_posts

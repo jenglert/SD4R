@@ -1,6 +1,6 @@
 /* Basic rails styles */
 body              { background-color: #fff; color: #333; padding: 0px; margin: 0px; }
-body              { font-family: "Lucida Grande"; font-size:   14px; line-height: 18px; background-color: #158384; }
+body              { font-family: "Lucida Grande"; font-size:   14px; background-color: #158384; }
 pre               { background-color: #eee; padding: 10px; font-size: 11px; }
 .fieldWithErrors  { border-color: red; display: inline; }
 #errorExplanation { width: 400px; border: 2px solid red; padding: 7px; padding-bottom: 12px; 
@@ -18,14 +18,16 @@ a:hovor { color: #D46300; text-decoration: none; }
 /* general */
 .taglineSmall   { color: #D46300; }
 .orangish       { color: #D46300; }
+.strong         { font-weight: bold; }
 .floatLeft      { float: left; }
 .floatRight     { float: right; }
 .clearBoth      { clear: both; }
-.titleContainer { position: relative; height: 40px; padding-bottom: 10px; }
+.titleContainer { position: relative; height: 40px; padding-bottom: 20px; }
 H2.title        { font-size: 28px; position: absolute; top: 0px; left: 0px; z-index: 100; } 
 H2.titleBack    { font-size: 28px; color: #D46300; position: absolute; top: 1px; left: 1px; }
 H3              { color: #D46300; padding-left: 3px; }
 A IMG           { outline: none; border: none;}
+H2.header       { color: #0398e8; font-size: 25px; padding:0 0 15px 0; text-align: center; }
 
 /** layout */
 .siteLogo        { margin: auto; color: white; text-align: left;}
@@ -48,19 +50,21 @@ BODY.newLayout   { background:#f4ac1a url('/images/layout_v2/background.jpg') no
 .newLayout .login .passwordOverlay { position: absolute; top: 12px; left: 171px; color: #42b0e5; z-index: 999; }
 .newLayout .login .password { position: absolute; top: 10px; left: 165px; width: 90px;}
 .newLayout .login .go       { position: absolute; top: 12px; left: 275px; }
+.newLayout .logo            { padding: 0 18px 18px 16px; }
 
-.newLayout .mainContent .whiteBackground { z-index: 999; position: absolute; left: 434px; width: 477px; padding: 0 65px; height: 100%;
+.newLayout .whiteBackground { z-index: -1	; position: fixed; left: 434px; width: 477px; padding: 0 65px; height: 100%; top: 0px;
 	 																				 background: transparent url('/images/layout_v2/main_white_background.png') repeat-y left top; }
-.newLayout .mainContent .heightEnforcer { float: right; height: 538px;}
-.newLayout .mainContent .navigation   { height: 60px; text-align: center; padding-top: 20px; }
+.newLayout .mainContent               { z-index: 1; width: 486px; padding: 0 0 0 494px; }
+.newLayout .mainContent .navigation   { height: 40px; text-align: center; padding-top: 10px; }
 .newLayout .mainContent .navigation A { color: #0398e8; font-size: 22px;  padding: 0 10px; }
 .newLayout .mainContent .footer       { height: 40px; text-align: center; padding-top: 20px; }
 .newLayout .mainContent .footer     A { color: #303030; font-size: 16px; padding: 0 10px; }
+.newLayout .mainContent .pageYield    { padding: 0 10px; width: 466px; }
 	
 	
 /* Homepage V2 */
 .homepageV2        { text-align: center; }
-.homepageV2 .information .header { color: #0398e8; font-size: 25px; padding: 50px 0 15px 0; }
+.homepageV2 .header              { padding: 50px 0 10px 0; color: #0398e8; font-size: 25px; text-align: center; }
 .homepageV2 .information .more   { color: #4a4a4a; font-size: 17px; width: 350px; margin: auto; padding-bottom: 60px; }
 
 /* Login elements */
@@ -74,11 +78,12 @@ BODY.newLayout   { background:#f4ac1a url('/images/layout_v2/background.jpg') no
 .siteLogo .welcomeUser { color: black; float: right; padding-top: 10px; padding-right: 30px;}
 
 /** Flash notices */
-.flashNotice     { width: 100%; background-color: white; margin: 0 0 10px 0; padding: 10px 0 15px 0; text-align: center; font-size: 20px; display: none; }
+.flashNotice     { width: 481px; background-color: white; margin: 0 0 10px 0; padding: 10px 0 15px 0; border: 3px solid #D46300;
+									 text-align: center; font-size: 20px; display: none; position: absolute; }
 .flashNotice .orangish { padding-bottom: 3px; font-size: 24px; font-variant: small-caps;}
 
 /** Homepage */
-.homepage { margin: auto; padding-left: 20px; width: 580px;}
+.homepage { margin: auto; padding-left: 20px; }
 .homepage .question { padding: 6px 0 6px 0; }
 .homepage .answer { margin-left: 10px; padding-left: 22px; background-image:url('/images/arrow.png'); 
 					background-repeat: no-repeat; background-position: left center; padding-top: 5px; }
@@ -143,3 +148,8 @@ BODY.newLayout   { background:#f4ac1a url('/images/layout_v2/background.jpg') no
 /* Event listing page */
 .eventsIndex TH,
 .eventsIndex TD   { padding: 1px 10px 1px 10px; } 
+
+/* Input hint overlay */
+.inputHintOverlay { color: #65BFEA; font-size: 12px; }
+input[type=text], textarea { padding: 2px; font-size: 13px; width: 200px; float: left; clear: both; margin-bottom: 8px; }
+input[type=button] { float: left; clear: both; font-size: 13px; padding: 1px; }

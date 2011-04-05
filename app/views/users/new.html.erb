@@ -23,9 +23,16 @@
 	</div>
 	
 	<div class="question">
+		<label>City</label><span class="orangish">:</span>	
+	<%= f.select :city, options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name'), {}, { :onChange => "populateNeighborhoods($('#user_city').val(), 'user', false)" } %>
+	</div>
+	
+	<div class="question">
 		<label>Neighborhood</label><span class="orangish">:</span>
-		<%= f.select :neighborhood_id, option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(@user.city_id || params[:city_id] || 9), 'members', 'grouping', 'id', 'name', @user.neighborhood_id) #Hack.  We default to NYC
-		 %>
+		<span id="neiborhoodDropdown">
+			<%= f.select :neighborhood_id, option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(@user.city_id || params[:city_id] || 9), 'members', 'grouping', 'id', 'name', @user.neighborhood_id) #Hack.  We default to NYC
+			 %>
+		</span>
 	</div>
 
 	<div class="question">

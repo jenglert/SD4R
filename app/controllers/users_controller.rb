@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new(:first_name => 'First Name', :last_name => 'Last Name', :email => "Email Address", :password => 'Password', :city_id => params[:city_id])
+    render :layout => 'standard2'
   end
 
   def create

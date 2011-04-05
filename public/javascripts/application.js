@@ -28,8 +28,13 @@ function hideShowEmailBlur(element, expectedValue) {
 	}	
 }
 
-function populateNeighborhoods(cityId, object_name) {
-	$('#neiborhoodDropdown').load('/helper/neighborhoods?city_id=' + cityId + '&object_name=' + object_name);
+function populateNeighborhoods(cityId, object_name, show_label) {
+	if (object_name) {
+		$('#neiborhoodDropdown').load('/helper/neighborhoods?city_id=' + cityId + '&object_name=' + object_name + '&show_label=' + show_label);
+	}
+	else {
+		$('#neiborhoodDropdown').load('/helper/neighborhoods?city_id=' + cityId + '&show_label=' + show_label);
+	}
 }
 
 function hideFlashNotice() {
