@@ -40,6 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.connect 'host-an-event', :controller => 'static_pages', :action => 'host_an_event'
   map.connect 'privacy-policy', :controller => 'static_pages', :action => 'privacy_policy'
+  map.connect 'sponsor-an-event', :controller => 'static_pages', :action => 'sponsor_an_event'
   map.connect 'contact-us', :controller => 'static_pages', :action => 'contact_us'
   map.connect 'about-our-events', :controller => 'static_pages', :action => 'about_our_events'
   map.connect 'legal', :controller => 'static_pages', :action => 'legal'

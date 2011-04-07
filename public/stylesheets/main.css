@@ -124,7 +124,7 @@ BODY.newLayout   { background:#f4ac1a url('/images/layout_v2/background.jpg') no
 .registration .desired_age_min { width: 25px; }
 
 .registration .day_available_label { margin-left: -3px; }
-.registration .submit     { margin: 10px 0 0 15px;}
+.registration .submit     { margin: 10px 0 0 100px; }
 
 /* host an event */
 .hostAnEvent .section { padding-left: 25px; }
@@ -151,5 +151,9 @@ BODY.newLayout   { background:#f4ac1a url('/images/layout_v2/background.jpg') no
 
 /* Input hint overlay */
 .inputHintOverlay { color: #65BFEA; font-size: 12px; }
-input[type=text], textarea { padding: 2px; font-size: 13px; width: 200px; float: left; clear: both; margin-bottom: 8px; }
-input[type=button] { float: left; clear: both; font-size: 13px; padding: 1px; }
+.inputHintOverlay input[type=text], .inputHintOverlay textarea { padding: 2px; font-size: 13px; width: 200px; float: left; clear: both; margin-bottom: 8px; }
+.inputHintOverlay input[type=button] { float: left; clear: both; font-size: 13px; padding: 1px; }
+
+
+/* About our events */
+.aboutOurEvents LI { padding-bottom: 3px; }

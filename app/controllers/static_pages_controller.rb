@@ -15,6 +15,8 @@ class StaticPagesController < ApplicationController
   end
   
   def legal
-    
+  end
+  
+  def sponsor_an_event
   end
 end
