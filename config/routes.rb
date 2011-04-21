@@ -49,6 +49,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users, :events, :landing_pages, :blog_posts
   end
   
+  map.connect 'users/registration_thanks', :controller => 'users', :action => 'registration_thanks'
   map.resources :users
     
   map.root :controller => "homepage"

@@ -2,15 +2,13 @@
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
 
-  <%= f.hidden_field :city_id %>
-
   <div class="header">
 	<div class="important">Tell us about yourself</div>
 	<div class="moreInformation">We promise not to give your information to anyone!</div>
   </div>
 
 	<div class="question">
-		<%= f.text_field :first_name, :class => 'first_name text', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';"%> 
+		<%= f.text_field :first_name, :class => 'first_name text', :title => 'First Name' %> 
 		<%= f.text_field :last_name, :class=> "last_name text", :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
 	</div>
 
@@ -19,12 +17,12 @@
 	</div>
 	
 	<div class="question">
-		<%= f.text_field :password, :class=> "password", :onFocus => "if(this.value=='Password') this.value='';", :onBlur => "if(this.value=='') this.value='Password';"%> 
+		<%= f.password_field :password, :class=> "password", :onFocus => "if(this.value=='Password') this.value='';", :onBlur => "if(this.value=='') this.value='Password';"%> 
 	</div>
 	
 	<div class="question">
 		<label>City</label><span class="orangish">:</span>	
-	<%= f.select :city, options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name'), {}, { :onChange => "populateNeighborhoods($('#user_city').val(), 'user', false)" } %>
+	<%= f.select :city_id, options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name', @user.city_id), {}, { :onChange => "populateNeighborhoods($('#user_city_id').val(), 'user', false)" } %>
 	</div>
 	
 	<div class="question">
@@ -108,4 +106,8 @@
   </div>
 <% end %>
 </div>
+
+<script type="text/javascript">
+	$(".registration").inputHintOverlay(3, 10);
+</script>
 

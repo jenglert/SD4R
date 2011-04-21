@@ -50,16 +50,3 @@ function submitUserLeadForm() {
 		
 		return false;
 }
-
-function hideShowLoginOverlay(type) {
-	var input = $('.siteLogo .' + type);
-	if(input.is(':focus')) {
-		if((input.val() == '-' + type + '-') || (input.val() == '')) {
-			input.val('');
-		}
-	} else {
-		if((input.val() == '-' + type + '-') || (input.val() == '')) {
-			input.val('-' + type + '-');
-		}
-	}
-}

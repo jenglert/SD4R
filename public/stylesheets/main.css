@@ -75,7 +75,7 @@ BODY.newLayout   { background:#f4ac1a url('/images/layout_v2/background.jpg') no
 .siteLogo .login .password { width: 110px; text-align: center; color: gray; }
 .siteLogo FORM         { display: inline; }
 .siteLogo .loginSubmit { height: 20px; width: 20px; vertical-align: bottom; }
-.siteLogo .welcomeUser { color: black; float: right; padding-top: 10px; padding-right: 30px;}
+.welcomeUser { color: black; padding-top: 5px; padding-right: 30px; padding-left: 55px;}
 
 /** Flash notices */
 .flashNotice     { width: 481px; background-color: white; margin: 0 0 10px 0; padding: 10px 0 15px 0; border: 3px solid #D46300;

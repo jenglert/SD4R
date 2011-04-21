@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
     cookies[:logged_in] = { :value => user.id, :expires => 360.days.from_now}
   end
   
+  def logged_in_filter
+    if !current_user
+      redirect_to '/'
+    end
+  end
+  
   def current_user
     user_id = cookies[:logged_in]
     
