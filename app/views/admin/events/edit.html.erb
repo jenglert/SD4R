@@ -1,7 +1,7 @@
 <% @page_title = @event.id ? 'Create' : 'New' + ' an Event' %>
 <div class="editEvent">
 	<h2><%= @event.id ? 'Edit' : 'New' %> Event</h2>
-	<% form_for @event, :url => '/admin/events/create' do |e| %>
+	<% form_for @event, :url => '/admin/events/update' do |e| %>
 		<%= e.error_messages %>
 		<%= e.hidden_field :id %>
 		<p>

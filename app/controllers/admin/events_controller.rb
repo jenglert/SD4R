@@ -14,8 +14,6 @@ class Admin::EventsController < AdminController
   end
   
   def update
-    
-    
     if id = params[:event][:id]
       @event = Event.find(id)
       if @event.update_attributes!(params[:event])
