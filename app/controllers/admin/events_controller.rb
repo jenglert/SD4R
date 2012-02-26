@@ -13,27 +13,23 @@ class Admin::EventsController < AdminController
     @event = Event.find(params[:id])
   end
   
-  def show
-    @event = Event.find(params[:id])
-  end
-  
-  def create
-    @event = Event.new(params[:event])
-    
-    if @event.save
-      redirect_to :action => 'show', :id => @event
-    else
-      render :action => 'edit'
-    end
-  end
-  
   def update
-    @event = Event.new(params[:event])
     
-    if @event.save
-      redirect_to :action => 'show', :id => @event
-    else
-      render :action => 'edit'
-    end    
+    
+    if id = params[:event][:id]
+      @event = Event.find(id)
+      if @event.update_attributes!(params[:event])
+        redirect_to :action => 'index'
+      else
+        render :action => 'edit'
+      end
+    else 
+      @event = Event.new(params[:event])
+      if @event.save
+        redirect_to :action => 'index'
+      else
+        render :action => 'edit'
+      end
+    end
   end
 end

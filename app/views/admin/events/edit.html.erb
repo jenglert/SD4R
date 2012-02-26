@@ -3,15 +3,16 @@
 	<h2><%= @event.id ? 'Edit' : 'New' %> Event</h2>
 	<% form_for @event, :url => '/admin/events/create' do |e| %>
 		<%= e.error_messages %>
+		<%= e.hidden_field :id %>
 		<p>
 			Title: <%= e.text_field :title %>
 		</p>
 		<p>
-			City: <%= select_tag 'city', options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name', @event.neighborhood.city_id), :onchange => "populateNeighborhoods($(this).val(), 'event')" %>
+			City: <%= select_tag 'city', options_from_collection_for_select([IdName.new(0, 'Choose a City')] + City.all, 'id', 'name', @event.andand.neighborhood.andand.city_id), :onchange => "populateNeighborhoods($(this).val(), 'event')" %>
 		</p>
 		<p id="neiborhoodDropdown"></p>
 			<% if @event.neighborhood_id %>
-				Neighborhood: <%= e.select :neighborhood_id, option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(@event.neighborhood.city_id || 9), 'members', 'grouping', 'id', 'name', @event.neighborhood_id)%>
+				Neighborhood: <%= e.select :neighborhood_id, option_groups_from_collection_for_select(Neighborhood.neighborhood_groups(@event.andand.neighborhood.andand.city_id || 9), 'members', 'grouping', 'id', 'name', @event.andand.neighborhood_id)%>
 			<% end %>
 		<p>
 		<p>
@@ -25,6 +26,9 @@
 		</p>
 		<p>
 			Notes: <%= e.text_area :notes, :rows => 4 %>
+		</p>
+		<p>
+			Checkout Code: <%= e.text_area :checkout_code, :rows => 4 %>
 		</p>
 		
 		<%= submit_tag 'Create Event' %>

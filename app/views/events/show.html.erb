@@ -1,6 +1,6 @@
-<% @page_title = @event.title %>
+<% @page_title = "#{@event.title} - #{@event.neighborhood.name} - Roommate Speed Dating" %>
 <div class="eventShow">
-	<h2><%= @event.title %></h2>
+	<%= render :partial => 'event_info', :locals => { :event => @event } %>
 	
 	
 </div>
