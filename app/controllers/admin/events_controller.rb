@@ -14,7 +14,8 @@ class Admin::EventsController < AdminController
   end
   
   def update
-    if id = params[:event][:id]
+    id = params[:event][:id]
+    if id.to_i != 0
       @event = Event.find(id)
       if @event.update_attributes!(params[:event])
         redirect_to :action => 'index'
