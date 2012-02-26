@@ -35,8 +35,20 @@ ActiveRecord::Schema.define(:version => 20101128011904) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "events" because of following StandardError
-#   Unknown type 'sting' for column 'host_name'
+  create_table "events", :force => true do |t|
+    t.integer  "neighborhood_id"
+    t.datetime "event_date"
+    t.integer  "host_id"
+    t.integer  "status"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "location"
+    t.string   "host_name"
+    t.string   "host_email"
+    t.string   "host_phone"
+    t.text     "notes"
+  end
 
   create_table "landing_pages", :force => true do |t|
     t.string   "name"
