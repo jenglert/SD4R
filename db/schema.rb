@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101128011904) do
+ActiveRecord::Schema.define(:version => 20120225211733) do
 
   create_table "blog_posts", :force => true do |t|
     t.text     "content"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20101128011904) do
     t.string   "host_email"
     t.string   "host_phone"
     t.text     "notes"
+    t.text     "checkout_code"
   end
 
   create_table "landing_pages", :force => true do |t|
