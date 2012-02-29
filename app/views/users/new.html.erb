@@ -8,8 +8,8 @@
   </div>
 
 	<div class="question">
-		<%= f.text_field :first_name, :class => 'first_name text', :title => 'First Name' %> 
-		<%= f.text_field :last_name, :class=> "last_name text", :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';", :onSubmit => "if $('last_name').value == 'Last Name'  { alert ('Please Enter Your Last Name'); }"%> 
+		<%= f.text_field :first_name, :class => 'first_name text', :title => 'First Name', :onFocus => "if(this.value=='First Name') this.value='';", :onBlur => "if(this.value=='') this.value='First Name';" %> 
+		<%= f.text_field :last_name, :class=> "last_name text", :onFocus => "if(this.value=='Last Name') this.value='';", :onBlur => "if(this.value=='') this.value='Last Name';"%> 
 	</div>
 
 	<div class="question">
@@ -106,8 +106,4 @@
   </div>
 <% end %>
 </div>
-
-<script type="text/javascript">
-	$(".registration").inputHintOverlay(3, 10);
-</script>
 

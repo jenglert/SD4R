@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  extend ActiveSupport::Memoizable
+  
   validates_presence_of :first_name, :last_name, :age, :gender, :email, :password
   validates_presence_of :desired_rent_min, :desired_rent_max, :desired_age_min
   validates_presence_of :user_description, :neighborhood_id, :desired_age_max, :desired_move_in_month
@@ -29,6 +31,16 @@ class User < ActiveRecord::Base
   def full_name
     "#{last_name}, #{first_name}"
   end
+  
+  def has_upcoming_local_event?
+    return !next_local_event.nil?
+  end
+  memoize :has_upcoming_local_event?
+  
+  def next_local_event
+    Event.find(:first, :conditions => ["neighborhood_id in (?)", neighborhood.close_neighorhoods.map(&:id)], :order => 'event_date')
+  end
+  memoize :next_local_event
   
   def move_in_month_friendly
     return "" if !desired_move_in_month

@@ -1,6 +1,4 @@
-<!DOCTYPE html PUBLIC
-  "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<%= render :partial => 'partials/head.html.erb' %>
@@ -53,7 +51,11 @@
 			<div class="navigation">
 				<%= link_to 'Home', :controller => 'homepage', :action => 'v2' %>
 				<%= link_to 'About our Events', '/about-our-events' %>
-				<%= link_to 'Sign Up', :controller => 'users', :action => 'new'%>
+				<% if logged_in? %>
+					<%= link_to 'Events', :controller => 'events' %>
+				<% else %>
+					<%= link_to 'Sign Up', :controller => 'users', :action => 'new' %>
+				<% end %>
 			</div>
 			<img src="/images/layout_v2/logo.png" class="logo"/>
 			<div class="pageYield">
@@ -66,6 +68,16 @@
 				<%= link_to 'Legal / Privacy', '/legal' %>
 			</div>
 		</div>
+
+		<% if @next_event_splash %>
+			<a id="eventInAreaAdLink" class="displayNone" href="#eventInAreaAd">eventInAreaAd</a>
+			<div class="displayNone">
+				<div id="eventInAreaAd">
+					<h2>There is an upcoming event in your area!</h2>
+					<%= link_to "Check it out!", :controller => 'events', :action => 'signup', :id => @next_event_splash.id %>
+				</div>
+			</div>
+		<% end %>
 		
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];

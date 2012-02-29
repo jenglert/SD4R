@@ -9,7 +9,19 @@ $(document).ready(function() {
 	$("input:submit,").button();
 	
  	setTimeout('hideFlashNotice()', 10000);
-})
+
+	$('a#eventInAreaAdLink').fancybox( { 
+		overlayShow: 0.2,
+		transitionIn: 'fade',
+		padding: 20
+	});
+	setTimeout('showEventInAreaAd()', 500);
+});
+
+function showEventInAreaAd() {
+	$('a#eventInAreaAdLink').trigger('click');
+}
+
 
 function selectACity() {
 	var city = $('#city').val();

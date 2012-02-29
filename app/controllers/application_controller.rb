@@ -4,6 +4,9 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  extend ActiveSupport::Memoizable
+
+  before_filter :show_event_splash
   
   layout 'standard2'
 
@@ -19,6 +22,27 @@ class ApplicationController < ActionController::Base
       redirect_to '/'
     end
   end
+
+  def show_event_splash
+    user = current_user
+    return if !user
+    
+    if event = user.next_local_event
+      shown_splash_recently = !cookies[:shown_next_event_splash].nil?
+      
+      if !shown_splash_recently
+        @next_event_splash = event     
+        cookies[:shown_next_event_splash] = { :value => true, :expires => 3.days.from_now}   
+      end
+    end
+    
+    return false
+  end
+
+  def logged_in?
+    !current_user.nil?
+  end
+  helper_method :logged_in?
   
   def current_user
     user_id = cookies[:logged_in]

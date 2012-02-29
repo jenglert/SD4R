@@ -27,6 +27,10 @@ class Neighborhood < ActiveRecord::Base
     
     groups.values.sort{ |a, b| b.id <=> a.id }
   end
-  
+
+  def close_neighorhoods
+    # Unimplemented at this point
+    return [ self ]
+  end
   
 end

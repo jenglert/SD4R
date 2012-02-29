@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new(:city_id => params[:city_id])
+    return redirect_to :controller => 'events' if logged_in?
+    
+    @user = User.new(:city_id => params[:city_id], :first_name => 'First Name', :last_name => 'Last Name')
     render :layout => 'standard2'
   end
 

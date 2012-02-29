@@ -16,6 +16,7 @@ a:click { color: #D46300; text-decoration: none; }
 a:hovor { color: #D46300; text-decoration: none; }
 
 /* general */
+.displayNone    { display: none; }
 .taglineSmall   { color: #D46300; }
 .orangish       { color: #D46300; }
 .strong         { font-weight: bold; }
