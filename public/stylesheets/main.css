@@ -158,3 +158,11 @@ BODY.newLayout   { background:#f4ac1a url('/images/layout_v2/background.jpg') no
 
 /* About our events */
 .aboutOurEvents LI { padding-bottom: 3px; }
+
+/* Event in area popup */
+.eventInAreaAd { text-align: center; }
+.eventInAreaAd .eventIn  { text-align: center; padding-bottom: 15px; } 
+.eventInAreaAd .eventIn A  { font-size: 22px; } 
+.eventInAreaAd .moreInfo { text-align: center;  } 
+.eventInAreaAd .moreInfo A { color: #0398E8; font-size: 24px; padding-bottom: 15px; } 
+

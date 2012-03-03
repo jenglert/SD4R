@@ -72,9 +72,14 @@
 		<% if @next_event_splash %>
 			<a id="eventInAreaAdLink" class="displayNone" href="#eventInAreaAd">eventInAreaAd</a>
 			<div class="displayNone">
-				<div id="eventInAreaAd">
-					<h2>There is an upcoming event in your area!</h2>
-					<%= link_to "Check it out!", :controller => 'events', :action => 'signup', :id => @next_event_splash.id %>
+				<div id="eventInAreaAd" class="eventInAreaAd">
+					<h2>We noticed there is an event coming up in your area.</h2>
+					<div class="eventIn">
+						<%= link_to "#{@next_event_splash.title} - Happening in #{distance_of_time_in_words(Time.now, @next_event_splash.event_date)}.", :controller => 'events', :action => 'signup', :id => @next_event_splash.id %>
+					</div>
+					<div class="moreInfo">
+						<%= link_to "Click For More Info", :controller => 'events', :action => 'signup', :id => @next_event_splash.id %>
+					</div>
 				</div>
 			</div>
 		<% end %>

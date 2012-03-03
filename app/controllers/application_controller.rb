@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     return if !user
     
     if event = user.next_local_event
-      shown_splash_recently = !cookies[:shown_next_event_splash].nil?
+      shown_splash_recently = false # !cookies[:shown_next_event_splash].nil?
       
       if !shown_splash_recently
         @next_event_splash = event     
